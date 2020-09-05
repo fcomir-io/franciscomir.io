@@ -1,0 +1,19 @@
+/*! Primitive
+  by Francisco Mir
+  based on Tania Rascia github (https://github.com/taniarascia/taniarascia.com/) 
+*/
+
+// General variables
+@import 'base/variables';
+
+// For responsiveness
+@import 'base/mixins';
+
+// Sytles reused in pages
+@import 'base/common';
+
+// Reset
+@import 'base/reset';
+
+// For dark mode
+@import 'base/dark';

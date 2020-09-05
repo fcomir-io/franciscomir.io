@@ -1,0 +1,200 @@
+// General variables
+@import "../base/variables";
+
+.dark {
+  /** General Configuration */
+  background: $dark-background;
+  color: white;
+
+  /** Navigation component */
+  .nav {
+    background: $dark-background;
+
+    &.scroll {
+      background: darken($dark-background, 15%);
+      border-color: darken($dark-background, 5%);
+    }
+
+    .brand {
+      color: $dark-font-color__title;
+
+      &:hover {
+        color: lighten($dark-font-color__highlighted, 15%);
+      }
+
+      .text {
+        color: $dark-font-color__title;
+      }
+    }
+
+    .motto {
+      color: $dark-font-color__title;
+    }
+
+    .menu-links a {
+      color: $dark-font-color__text;
+
+      &:hover {
+        color: lighten($dark-font-color__text, 10%);
+        background: lighten($dark-background, 5%);
+      }
+
+      &:active,
+      &.active {
+        color: lighten($dark-font-color__highlighted, 30%);
+        background: lighten($dark-background, 5%);
+      }
+    }
+  }
+
+  /** Main Content */
+  #main-content {
+    background-color: $dark-background;
+  }
+
+  /** Page ==> index.js */
+  .summary {
+    .elevator-pitch {
+      p {
+        a {
+          color: $dark-font-color__link;
+        }
+      }
+    }
+  }
+
+  .experience-block {
+    //background-color: rgb(193, 237, 243);
+
+    .experience-box {
+      .topic {
+        h1 {
+          color: white;
+        }
+
+        &:hover {
+          color: black;
+          background-color: darken($light-navigation-shadow, 50%);
+        }
+      }
+    }
+  }
+
+  .articles {
+    .section {
+      a.view-all {
+        background: lighten($secondary-color, 30%);
+        color: white;
+
+        &:hover,
+        &:focus {
+          background: $secondary-color;
+        }
+      }
+    }
+  }
+  /** ----------------------------- */
+
+  /** Post Listing */
+  .posts {
+    a {
+      .each-post {
+        &:hover,
+        &:active,
+        &:focus {
+          background: darken(white, 20%);
+        }
+      }
+
+      .icon-and-title {
+        h2 {
+          color: $dark-font-color__title;
+        }
+      }
+    }
+  }
+
+  /** Blog */
+  .articles-header {  
+    .category-container {    
+      a.category-filter {
+        color: white;
+
+        &:hover {
+          background: lighten($secondary-color, 28%);
+          color: darken($secondary-color, 5%);
+        }
+      }
+    }
+  }
+
+  .tag-container {
+    h1 {  
+      .tag {
+        background: lighten($secondary-color, 28%);
+        color: white;        
+      }
+    }
+  }
+  /** Collapsible */
+
+  /** Popup Windows */
+
+  /** Footer */
+  .footer {
+    background: $dark-background;
+    color: $dark-font-color__title;
+    box-shadow: 1px 2px 18px $light-navigation-shadow;
+
+    a {
+      color: $dark-font-color__text;
+
+      &:hover {
+        color: lighten($dark-font-color__title, 20%);
+      }
+    }
+  }
+
+  /** Post Template */
+  .post-container {
+    .post-header-info {
+      .post-meta {
+        .date {
+          color: $dark-font-color;
+        }
+        a {
+          color: $dark-font-color;
+        }
+      }
+    }
+  }
+
+  /** Post Tags */
+  .tag-container {
+    span {
+      background: lighten($secondary-color, 30%);
+      color: white;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: $secondary-color;
+      }
+    }
+  }
+
+  /** common.scss File */
+  .subscribe-button {
+    a {
+      color: white;
+    }
+
+    &:hover,
+    &:focus {
+      a,
+      .react-icons {
+        color: $dark-font-color__text;
+      }
+    }
+  }
+}

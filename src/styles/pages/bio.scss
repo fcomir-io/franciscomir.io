@@ -1,0 +1,116 @@
+@import "../main.scss";
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.bio-general {
+  display: flex;
+  flex-direction: column;
+
+  .general-details {
+    ul {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  } 
+  
+  .general-image {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.bio-sport {
+  display: flex;
+  flex-direction: column;
+
+  .sport-details {
+    ul {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  } 
+  
+  .sport-image {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.bio-art-music {
+  display: flex;
+  flex-direction: column;
+
+  .art-music-details {
+    ul {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  } 
+  
+  .art-music-image {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .bio-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .bio-sport {
+    display: flex;
+    flex-direction: row;
+  
+    .sport-details {
+      ul {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    } 
+    
+    .sport-image {
+      width: 40%;
+      margin: 0 1rem;
+    }
+
+    margin-bottom: 3rem;
+  }
+  
+  .bio-art-music {
+    display: flex;
+    flex-direction: row-reverse;
+  
+    .art-music-details {
+      ul {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    } 
+    
+    .art-music-image {
+      width: 40%;
+      margin: 0 1rem;
+    }
+
+    margin-bottom: 3rem;
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  .bio-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,76 @@
+/* Variables
+ * ===============
+ *
+ * All variables and most of the configuration is defined on this page. 
+ */
+
+//$width: 800px;
+$width: 100%;
+$width-medium: 90%;
+$width-large: 76%;
+$min-margin: 1rem;
+
+/* Containers */
+$x-small: 720px;
+$small: 800px;
+$medium: 1200px;
+$large: 1300px;
+
+/* Breakpoints */
+$small-mobile: 400px;
+$mobile: 620px;
+$tablet: $small;
+$desktop: $large;
+
+/* Margins and Paddings */
+//$margin-medium: 12%;
+$margin-medium: 5%;
+$margin-large: 10%;
+$footer-padding-small: 5%;
+//$footer-padding-medium: 14%;
+$footer-padding-medium: 8%;
+//$footer-padding-large: 19%;
+$footer-padding-large: 12%;
+
+/* Colors */
+$light-background: #f8ffff;
+$dark-background: #2c2b2b;
+$light-navigation-shadow: rgba(46, 163, 134, 0.658);
+$light-navigation-menu__hover: rgba(202, 236, 216, 0.637);
+$light-footer-background: #4fcfc5;
+$primary-color: rgba(17, 122, 96, 0.658);
+$secondary-color: rgba(55, 128, 100, 0.658);
+
+/* Typography */
+
+// Body font
+
+$light-font-color__title: rgba(0, 0, 0, 0.6);
+$light-font-color__text: rgba(0, 0, 0, 0.6);
+$light-font-color__link: rgba(9, 87, 67, 0.658);
+$light-font-color: $light-font-color__title;
+$dark-font-color__title: #28a79c;
+$dark-font-color__text: #28a79c;
+$dark-font-color__link: #28a79c;
+$dark-font-color__highlighted: #076335;
+$dark-font-color: $dark-font-color__title;
+
+// Headings
+
+// Mobile heading font size
+
+// Heading font size
+
+/* Borders */
+$border-radius: 6px;
+$border-color: blue;
+
+/* Buttons */
+
+// Accent buttons
+
+/* Forms */
+
+/* Tables */
+
+/* Code */

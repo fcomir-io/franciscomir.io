@@ -1,0 +1,34 @@
+@import "../../styles/main.scss";
+
+.tag-container {
+    a {
+      display: inline-block;
+    }
+    span {
+      display: inline-block;
+      padding: 0.3rem 0.5rem;
+      background: lighten($dark-background, 70%);
+      border-radius: $border-radius;
+      color: lighten($light-font-color__title, 10%);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0 0.5rem 0.5rem 0;
+  
+      .count {
+        color: $light-background;
+        font-weight: 700;
+        margin-left: 0.25rem;
+      }
+  
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($dark-background, 50%);;
+        color: $light-font-color__text;
+      }
+    }
+  
+    &.articles-page-tags {
+      margin-bottom: 1rem;
+    }
+  }

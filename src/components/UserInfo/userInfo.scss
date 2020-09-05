@@ -1,0 +1,79 @@
+@import "../../styles/main.scss";
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: radial-gradient(
+    circle at 20% 20%,
+    $primary-color 25%,
+    $secondary-color 100%
+  );
+  box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100, 110, 140, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: $border-radius;
+  padding: 1rem;
+
+  .info-avatar {
+    .avatar {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .info-body {
+    p {
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.3rem;
+      font-size: 1rem;
+      overflow-wrap: break-word;
+      margin: 0;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.subscribe-button-container {
+  display: flex;
+  justify-content: center;
+  margin-right: 1rem;  
+  margin-top: 0.5rem;  
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  .card-container {    
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  /** Nothing to change */
+  .card-container {    
+    flex-direction: row;
+
+    .info-avatar {
+      margin-right: 2rem;
+    }
+
+    .subscribe-button-container {
+      display: flex;
+      justify-content: flex-end;      
+    }
+  }  
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing to change */
+}

@@ -1,0 +1,132 @@
+@import "../../styles/main.scss";
+
+.posts {
+  display: block;  
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+
+    .each-post {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 50px;
+      padding: 0.3rem;
+      margin: 0;
+      border: 1px solid transparent;
+      border-bottom: 1px solid lighten(black, 75%);
+      //border-radius: $border-radius;
+      
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($secondary-color, 50%);
+      }
+
+      .icon-and-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .post-icon {
+          display: none;
+        }
+
+        h2 {
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.3;
+          color: $light-font-color__title;
+          border-bottom: none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    .post-flags {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 0.3rem;
+
+      .new {
+        display: inline-block;
+        font-size: 0.9rem;
+        background: #9ab98b;
+        color: darken(rgb(93, 112, 76), 18%);
+        border-radius: $border-radius;
+        padding: 0.3rem 0.75rem;
+        text-align: center;
+      }
+
+      .modified {
+        display: inline-block;
+        font-size: 0.9rem;
+        background: #eedb88;
+        color: darken(rgb(93, 112, 76), 18%);
+        border-radius: $border-radius;
+        padding: 0.3rem 0.75rem;
+        text-align: center;
+      }
+    }
+    
+    // Avoid printing the border after last post
+    &:last-of-type {
+      .each-post {
+        border-bottom-color: transparent;        
+      }
+    }
+
+    // Force printing the border after only one post
+    &:first-of-type {
+      .each-post {
+        border-bottom: 1px solid lighten(black, 75%);
+      }
+    }
+    
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  .posts {
+    a {
+      .each-post {
+        .icon-and-title {
+          .post-icon {
+            display: inline-block;
+            .gatsby-image-wrapper {
+              margin-top: 0;
+              margin-right: 20px;
+              height: 40px !important;
+              width: 40px !important;
+            }
+          }
+
+          h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing to change */
+}

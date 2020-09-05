@@ -1,0 +1,44 @@
+@import "../main.scss";
+
+.resume-summary {
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+.resume-extra-info {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .cv-link {
+    margin: 0 2rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .linkedin-button {
+    margin-left: 0.5rem;
+  }
+  
+  a {
+    text-decoration: none; 
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .resume-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  .resume-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

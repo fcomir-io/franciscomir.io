@@ -1,0 +1,81 @@
+@import "../main.scss";
+
+.tag-container {
+  margin-top: 1rem;
+  overflow-wrap: break-word;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    .tag {
+      margin-left: o.5rem;
+      background-color: rgb(248, 247, 153);
+      padding: 0.3rem 0.5rem;
+      border-radius: $border-radius;
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+
+    .counter {
+      color: rgb(211, 20, 61);
+      text-decoration: none;
+      font-weight: bolder;
+    }
+  }
+
+  a.view-all {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    background: lighten($dark-background, 70%);
+    border-radius: $border-radius;
+    color: lighten($light-font-color__title, 10%);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 2px;
+    margin-bottom: 1.7rem;
+
+    &:hover,
+    &:focus {
+      background: lighten($dark-background, 50%);
+    }
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  /** Nothing change */
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  /** Nothing change */
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing change */
+  .container {
+    margin-top: 2rem;
+    overflow-wrap: break-word;
+  
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 200;      
+    }
+  }
+}

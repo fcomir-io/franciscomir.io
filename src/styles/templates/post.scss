@@ -1,0 +1,141 @@
+@import "../main.scss";
+
+.post-header {
+  display: flex;
+  padding-top: 1rem;
+  overflow-wrap: break-word;
+}
+
+.post-header-info {
+  flex-grow: 1;
+
+  .post-title {
+    h1 {
+      margin: 0.5rem 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+
+  .post-meta {
+    padding-top: 0.5rem;
+    margin: 0;
+    display: flex;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+
+    .date {      
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(0, 0, 0, 0.4);
+      font-weight: 400;
+    }
+
+    a {
+      color: $light-font-color;
+      text-decoration: none;
+
+      &.twitter-link {
+        margin: 0 0.5rem;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .avatar-small {
+      width: 50px;
+      max-width: 50px;
+      height: auto;
+      border-radius: 50%;
+      margin: 0;
+    }
+  }
+}
+
+/** Thumbnail area */
+.with-thumbnail {
+  display: none;
+}
+
+.post {
+  padding-top: 2rem;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;    
+    border-bottom: 1px solid lighten($border-color, 12%);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  ul {
+    li {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  iframe {
+    width: 330px;
+    height: auto;
+    background-color: blueviolet;
+  }
+
+  pre {
+    overflow-wrap: break-word;
+    .language-jsx {
+      width: 300px;
+      height: auto;  
+    }
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  /** Thumbnail area */
+  .with-thumbnail {
+    display: inline;
+    padding: 1rem 1rem 1rem 3rem;
+
+    .gatsby-image-wrapper {
+      order: 1;
+      margin-left: 2rem;
+      height: 150px !important;
+      width: 150px !important;
+    }
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .post-title {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing to change */
+}

@@ -1,0 +1,110 @@
+@import "../main.scss";
+
+.short-bio {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  
+  p {
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+}
+
+.areas-of-expertise {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  //border-bottom: 1px solid lighten(black, 75%);
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.abilities {
+  .ability-caption {
+    margin: 0 0 5px 0;
+    padding: 0.2rem 1rem 0;
+    border-bottom: 1px solid lighten(black, 75%);
+  }
+
+  .ability-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 0;    
+
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      text-align: left;
+      line-height: 20px;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+      //background-color: cadetblue;
+    }
+  }
+}
+
+.extra-info {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+
+  a {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+    margin-right: 2rem;
+    border: none !important;
+    background: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: $border-radius;
+    color: darken($primary-color, 5%);
+    background-color: rgb(218, 210, 210);
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($primary-color, 40%);
+    }
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  .abilities {
+    .ability-box {
+      flex-wrap: wrap;
+    }
+  }
+
+  .extra-info {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .about-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  .about-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

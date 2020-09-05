@@ -1,0 +1,170 @@
+@import "../main.scss";
+
+.experience-header {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.experience-body {  
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .experience-icon {
+    display: none;
+  }
+
+  .experience-summary {
+    margin-left: 0;
+  }
+}
+
+.experience-summary,
+.experience-description {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  ul {
+    li {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+.github-button {
+  margin: 1rem 0rem;
+}
+
+.experience-footer {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  h1 {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  a {
+    width: 45%;
+    margin-bottom: 0.7rem;
+    padding: 1rem 0rem;
+    border: none !important;
+    background: white;
+    text-decoration: none;
+    border-radius: $border-radius;
+    color: darken($primary-color, 5%);
+    background-color: rgb(218, 210, 210);
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($primary-color, 40%);
+    }
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  .experience-header {  
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  .experience-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .experience-icon {
+      display: block;
+      height: auto;
+      width: 300px;
+    }
+  }
+  .experience-summary,
+  .experience-description {
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .experience-footer {
+    h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .experience-container {
+    width: 85%;
+    margin: 0 auto;
+
+    .experience-body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      .experience-icon {
+        display: block;
+        height: auto;
+        width: 350px;
+        margin-right: 2rem;
+      }
+
+      .experience-summary {
+        margin-left: 1.5rem;
+      }
+    }
+    .experience-summary,
+    .experience-description {
+      font-weight: normal;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .experience-footer {
+      h1 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing to change */
+}

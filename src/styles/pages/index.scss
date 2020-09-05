@@ -1,0 +1,232 @@
+@import "../main.scss";
+
+.summary {
+  margin: 0 auto;
+  padding-top: 5px;
+  font-size: 1rem;
+
+  .elevator-pitch {
+    padding-bottom: 1rem;
+
+    .index-pitch {
+      h1 {
+        margin-top: 0px;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;        
+
+        a {
+          text-decoration: none;
+          color: $light-font-color__link;
+          font-weight: 700;
+        }
+      }
+
+    }
+    .direct-contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .contact-icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /*
+        .linkedin-button {
+          .icon-img {
+            height: 35px;
+            width: 35px;
+            margin: 0;
+          }
+        }
+        */
+        .github-button {
+          margin: 0.3rem 1rem;
+        }
+      }
+
+      margin-top: 1.5rem;
+      /*
+      .subscribe-button {
+        margin: 0.5rem 0rem;
+        font-size: 1rem;
+        padding: 0.3rem 2rem;
+        border: none !important;
+        background: $primary-color;
+        border-radius: $border-radius;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+        .react-icons {
+          margin-right: 0.3rem;
+          margin-top: 0.3rem;
+          vertical-align: text-bottom;
+          color: white;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          a,
+          .react-icons {
+            color: darken($primary-color, 20%);
+          }
+        }
+      }
+      */
+    }
+  }
+
+  .home-image {
+    display: none;
+  }
+}
+
+.experience {
+  margin: 2rem 0;
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.articles {
+  margin-top: 2rem;
+
+  .section {
+    margin: 75px 0;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 2rem;
+
+      a.view-all {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        background: lighten($dark-background, 70%);
+        border-radius: $border-radius;
+        color: lighten($light-font-color__title, 10%);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        margin-top: 2px;
+        //margin-bottom: 2px;
+
+        &:hover,
+        &:focus {
+          background: lighten($dark-background, 50%);
+        }
+      }
+    }
+
+    &:first-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/** Screens bigger than 420px */
+@include x-small-breakpoint {
+  /** Nothing to change */
+}
+
+/** Screens bigger than 620px */
+@include small-breakpoint {
+  .summary {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    .elevator-pitch {
+      .direct-contact-section {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .subscribe-button {
+          margin: 0 0rem;
+        }
+      }
+    }
+
+    .home-image {
+      display: inline;
+      padding: 0;
+      img {
+        height: auto;
+        width: 200px;
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+/** Screens bigger than $tablet = 800px */
+@include medium-breakpoint {
+  .summary {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 1rem;
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .elevator-pitch {
+      width: 70%;
+      margin-right: 3rem;
+
+      .index-pitch {
+
+        h1 {
+          margin-top: 20px;
+          font-size: 3rem;
+        }
+      }
+
+      .direct-contact-section {
+        margin-top: 2rem;
+      }
+    }
+
+    .home-image {
+      display: inline;
+      padding: 5rem 0;
+      img {
+        height: auto;
+        width: 400px;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .experience {
+    margin: 2rem 0;
+  }
+}
+
+/** Screens bigger than $desktop = 1200px */
+@include large-breakpoint {
+  /** Nothing to change */
+}

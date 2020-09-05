@@ -1,0 +1,47 @@
+@import "../../styles/main.scss";
+
+.experience-box {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .topic {
+    cursor: pointer;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: $border-radius;
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: $primary-color;
+
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+      padding: 0.3rem;
+    }
+
+    &:hover {
+      color: white;
+      //background-color: ligthen($primary-color, 25%);
+      background-color: $secondary-color;
+      box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active,
+    &.active {
+      box-shadow: 4px 8px 25px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .experience-icon {
+    margin: 0;
+    height: auto;//200px;
+    width: 250px;
+    border-radius: 0 0 $border-radius $border-radius;
+    background-color: transparent;
+    background: transparent;
+  }
+}
