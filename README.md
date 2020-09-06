@@ -12,8 +12,7 @@ My personal website running on Gatsby, React, and Node.js.
 
 https://priceless-bhabha-7132c2.netlify.app/
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/5ad6efc4-11f7-400b-bcf0-f55c64bf00aa/deploy-status)](https://app.netlify.com/sites/priceless-bhabha-7132c2/deploys)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/621392d3-e486-49c7-8d75-cd0602e168c9/deploy-status)](https://app.netlify.com/sites/compassionate-villani-cd7ef9/deploys)
 
 ### How to...
 
