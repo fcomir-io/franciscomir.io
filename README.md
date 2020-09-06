@@ -10,7 +10,7 @@ franciscomir.io
 
 My personal website running on Gatsby, React, and Node.js.
 
-https://priceless-bhabha-7132c2.netlify.app/
+https://compassionate-villani-cd7ef9.netlify.app/
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/621392d3-e486-49c7-8d75-cd0602e168c9/deploy-status)](https://app.netlify.com/sites/compassionate-villani-cd7ef9/deploys)
 
@@ -40,7 +40,7 @@ https://priceless-bhabha-7132c2.netlify.app/
 
 	[submodule "content"]
 		path = content
-		url = https://github.com/fcomir-io/franciscomir.io-content.git
+		url = git@github.com:fcomir-io/franciscomir.io-content.git
 
 Structure of the folder:
 
