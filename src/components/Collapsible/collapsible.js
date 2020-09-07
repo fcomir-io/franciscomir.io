@@ -6,7 +6,7 @@ import "./collapsible.scss"
 class Collapsible extends React.Component {
   constructor(props) {
     super(props)
-    console.log("props in Collapsible:", props)
+    //console.log("props in Collapsible:", props)
     this.state = {
       open: props.open,
     }

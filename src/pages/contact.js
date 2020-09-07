@@ -113,11 +113,11 @@ function ContactPage() {
       )
       .then(
         result => {
-          console.log("OK")
+          //console.log("OK")
           return true
         },
         error => {
-          console.log(error.text)
+          //console.log(error.text)
           return false
         }
       )

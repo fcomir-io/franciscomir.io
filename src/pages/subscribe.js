@@ -27,7 +27,7 @@ function SubscribePage() {
 
     /** Prepare optional data */
     let listFields = {}
-    console.log("listFields", listFields)
+    //console.log("listFields", listFields)
 
     /** Check fields */
 
@@ -49,9 +49,9 @@ function SubscribePage() {
 
     // Birthday
     const dateToCheck = moment(`${birthMonth}-${birthDay}`)
-    console.log("birthMonth", birthMonth)
-    console.log("birthDay", birthDay)
-    console.log("DateToCheck", dateToCheck)
+    //console.log("birthMonth", birthMonth)
+    //console.log("birthDay", birthDay)
+    //console.log("DateToCheck", dateToCheck)
     if (
       typeof birthMonth != "undefined" &&
       typeof birthDay != "undefined" &&
@@ -77,15 +77,15 @@ function SubscribePage() {
         return false
       }
     }
-    console.log("listFields", listFields)
+    //console.log("listFields", listFields)
 
     /** Use mailchimp plugin */
     addToMailchimp(email, listFields) // listFields are optional if you are only capturing the email address.
       .then(data => {
         // I recommend setting data to React state
         // but you can do whatever you want (including ignoring this `then()` altogether)
-        console.log("Message from Mailchimp: ", data)
-        console.log("Message from Mailchimp: ", data.msg)
+        //console.log("Message from Mailchimp: ", data)
+        //console.log("Message from Mailchimp: ", data.msg)
         /** Pop up window to show message */
 
         if (data.result == "success") {

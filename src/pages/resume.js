@@ -27,14 +27,14 @@ function ResumePage() {
     }
   `)
   const pdfFiles = myCV_Query.allFile.edges
-  console.log("myCV:", pdfFiles)
+  //console.log("myCV:", pdfFiles)
   let myCV_URL = ""
   pdfFiles.forEach(file => {
     if (file.node.name == "cv") {
       myCV_URL = file.node.publicURL
     }
   })
-  console.log("myCV:", myCV_URL)
+  //console.log("myCV:", myCV_URL)
 
   return (
     <PageLayout>

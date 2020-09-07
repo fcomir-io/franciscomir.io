@@ -43,7 +43,7 @@ export const article_Query = graphql`
 `
 const Post = props => {
   let article = props.data.markdownRemark
-  console.log(article)
+  //console.log(article)
   let thumbnail
   if (article.frontmatter.thumbnail) {
     thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed

@@ -11,7 +11,7 @@ import "./postListing.scss"
 export default class PostListing extends React.Component {
   getPostList() {
     const { postEdges } = this.props
-    console.log("postEdges", postEdges)
+    //console.log("postEdges", postEdges)
     const postList = postEdges.map(edge => {
       return {
         path: `/blog/${edge.node.fields.slug}`,

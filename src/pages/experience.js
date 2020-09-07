@@ -42,7 +42,7 @@ function ExperiencePage(props) {
     (availableImagesArray = contentImages_Query.allFile.edges)
   )
 
-  console.log("availableImagesArray: ", availableImagesArray)
+  //("availableImagesArray: ", availableImagesArray)
 
   // By default <== DO NOT LIKE THIS SOLUTION... It should go to 404
   let id = ""

@@ -9,7 +9,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
     /** Extract file name, without extension ==> slug */
     const slug = path.basename(node.fileAbsolutePath, ".md")
 
-    console.log("Slug: ", slug)
+    //console.log("Slug: ", slug)
 
     /** Add slug as key-value element of the node */
     createNodeField({

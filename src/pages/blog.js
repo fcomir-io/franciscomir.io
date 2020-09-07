@@ -70,8 +70,8 @@ function BlogPage(props) {
       setFilteredPosts(posts)
     }
 
-    console.log("name", name)
-    console.log("value", value)
+    //console.log("name", name)
+    //console.log("value", value)
   }
 
   function filterPosts() {
@@ -81,7 +81,7 @@ function BlogPage(props) {
         .includes(searchTerm.toLowerCase())
     )
 
-    console.log("result", result)
+    //console.log("result", result)
 
     // Update posts to list
     setFilteredPosts(result)

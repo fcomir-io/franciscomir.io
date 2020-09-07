@@ -23,7 +23,7 @@ export default class TagTemplate extends Component {
     } else {
       foundTextToShow = "posts found!"
     }
-    console.log("counter", counter)
+    //console.log("counter", counter)
 
     return (
       <PageLayout>
