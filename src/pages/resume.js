@@ -12,30 +12,10 @@ import PageLayout from "../pageLayout/pageLayout"
 import "../styles/pages/resume.scss"
 // Images
 import linkedin from "../images/linkedin.png"
+// myCV
+import myCV_URL from "../../static/CV - Francisco Mir - 2020.pdf"
 
 function ResumePage() {
-  const myCV_Query = useStaticQuery(graphql`
-    query {
-      allFile(filter: { extension: { eq: "pdf" } }) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
-      }
-    }
-  `)
-  const pdfFiles = myCV_Query.allFile.edges
-  //console.log("myCV:", pdfFiles)
-  let myCV_URL = ""
-  pdfFiles.forEach(file => {
-    if (file.node.name == "cv") {
-      myCV_URL = file.node.publicURL
-    }
-  })
-  //console.log("myCV:", myCV_URL)
-
   return (
     <PageLayout>
       <Helmet title={`About me - ${config.siteTitle}`} />
