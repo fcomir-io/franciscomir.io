@@ -29,12 +29,12 @@
     .date {      
       margin: 0 0.5rem;
       font-size: 0.9rem;
-      color: rgba(0, 0, 0, 0.4);
+      color: $primary-color;
       font-weight: 400;
     }
 
     a {
-      color: $light-font-color;
+      color: $light-font-color__link;
       text-decoration: none;
 
       &.twitter-link {

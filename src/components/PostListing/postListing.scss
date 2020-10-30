@@ -23,7 +23,7 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($secondary-color, 50%);
+        background: lighten($primary-color, 65%);
       }
 
       .icon-and-title {
@@ -77,7 +77,7 @@
     // Avoid printing the border after last post
     &:last-of-type {
       .each-post {
-        border-bottom-color: transparent;        
+        border-bottom-color: transparent;
       }
     }
 

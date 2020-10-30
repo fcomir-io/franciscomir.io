@@ -41,7 +41,7 @@
 
       &:active,
       &.active {
-        color: lighten($dark-font-color__highlighted, 30%);
+        color: white;
         background: lighten($dark-background, 5%);
       }
     }
@@ -68,13 +68,13 @@
 
     .experience-box {
       .topic {
-        h1 {
-          color: white;
+        &:hover {
+          box-shadow: 6px 12px 20px $light-navigation-shadow;
         }
 
-        &:hover {
-          color: black;
-          background-color: darken($light-navigation-shadow, 50%);
+        &:active,
+        &.active {
+          box-shadow: 12px 24px 40px $light-navigation-shadow;
         }
       }
     }
@@ -83,12 +83,13 @@
   .articles {
     .section {
       a.view-all {
-        background: lighten($secondary-color, 30%);
-        color: white;
+        background: $primary-color;
+        color: $secondary-color;
 
         &:hover,
         &:focus {
-          background: $secondary-color;
+          color: $primary-color;
+          background-color: $secondary-color;
         }
       }
     }
@@ -96,13 +97,16 @@
   /** ----------------------------- */
 
   /** Post Listing */
-  .posts {
+  .posts {    
     a {
       .each-post {
+        color: $secondary-color;
+
         &:hover,
         &:active,
         &:focus {
-          background: darken(white, 20%);
+          background: black;
+          color: white;
         }
       }
 
@@ -115,10 +119,11 @@
   }
 
   /** Blog */
-  .articles-header {  
-    .category-container {    
+  .articles-header {
+    /*
+    .category-container {
       a.category-filter {
-        color: white;
+        color: $primary-color;
 
         &:hover {
           background: lighten($secondary-color, 28%);
@@ -126,15 +131,17 @@
         }
       }
     }
+    */
   }
 
   .tag-container {
-    h1 {  
+    /*
+    h1 {
       .tag {
-        background: lighten($secondary-color, 28%);
-        color: white;        
+        background: $secondary-color;
+        color: $primary-color;
       }
-    }
+    }*/
   }
   /** Collapsible */
 
@@ -171,6 +178,7 @@
 
   /** Post Tags */
   .tag-container {
+    /*
     span {
       background: lighten($secondary-color, 30%);
       color: white;
@@ -181,6 +189,7 @@
         background: $secondary-color;
       }
     }
+    */
   }
 
   /** common.scss File */

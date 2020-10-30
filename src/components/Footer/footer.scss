@@ -5,8 +5,7 @@
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: lighten($secondary-color, 15%);  
-  color: $light-font-color__text;
+  background-color: $primary-color;  
 }
 
 .footer {
@@ -32,14 +31,14 @@
 
   a {
     font-size: 1rem;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    color: white;
     display: block;
     margin: 0 0.75rem;
     text-decoration: none;    
 
     &:hover {
-      color: rgba(0, 0, 0, 0.8);
+      color: $light-footer-link__hover-text;
     }
   }
 
