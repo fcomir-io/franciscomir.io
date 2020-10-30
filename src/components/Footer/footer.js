@@ -90,15 +90,8 @@ export default class Footer extends React.Component {
                 </div>
               </div>
               <div className="aux-block">
-                © 2020 Francisco Mir
-                <a className="privacy-policy"
-                  href="https://priceless-bhabha-7132c2.netlify.app/rss.xml"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Privacy and Cookies Policy
-                </a>
-                
+                © 2020 Francisco Mir           
+                <Link className="privacy-policy" to="/privacyPolicy">Privacy and Cookies Policy</Link>
               </div>
             </div>
           </footer>
