@@ -9,7 +9,7 @@ import { privacy_policy } from "../../content/data/privacyPolicy";
 // Components
 import PageLayout from "../pageLayout/pageLayout";
 // Styles
-import "../styles/pages/resume.scss";
+import "../styles/pages/privacyPolicy.scss";
 
 function PrivacyPolicy() {
   return (
