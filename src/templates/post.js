@@ -49,7 +49,7 @@ const Post = props => {
     thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed
   }
 
-  const twitterShare = `http://twitter.com/share?text=${props.data.markdownRemark.frontmatter.title}&url=${config.siteUrl}/${props.data.markdownRemark.fields.slug}/&via=fco.mirv`
+  const linkedInShare = `http://linkedin.com/shareArticle?mini=true&title=${article.frontmatter.title}&url=${config.siteUrl}&summary=${article.excerpt}`
 
   return (
     <PageLayout>
@@ -66,8 +66,8 @@ const Post = props => {
               </Link>
               <time className="date">{article.frontmatter.date}</time>/
               <a
-                className="twitter-link"
-                href={twitterShare}
+                className="linkedIn-link"
+                href={linkedInShare}
                 target="_blank"
                 rel="noopener noreferrer"
               >
