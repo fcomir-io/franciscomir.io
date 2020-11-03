@@ -9,11 +9,12 @@
 }
 
 .main-block {
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   .footer-links {
     display: flex;
@@ -68,14 +69,20 @@
       color: $light-footer-link__hover-text;
     }
   }
+  
+  padding-bottom: 2rem;
 }
 
 /** Screen bigger than 420px*/
 @include x-small-breakpoint {
-  .footer {
+  .footer {    
     a {
       font-size: 1.2rem;
     }
+  }
+
+  .main-block {
+    padding: 2rem 1rem 2rem 1rem;
   }
 }
 
@@ -100,6 +107,10 @@
     a {
       padding: 0;
     }
+  }
+
+  .main-block {
+    flex-direction: row;
   }
 }
 
