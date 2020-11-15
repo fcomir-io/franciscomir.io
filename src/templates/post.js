@@ -1,23 +1,24 @@
 // React libraries
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from "react";
+import { Helmet } from "react-helmet";
 // Components from Gatsby library
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 // Internal application data
-import config from "../../data/siteConfig"
+import config from "../../data/siteConfig";
 // Components
-import PageLayout from "../pageLayout/pageLayout"
-import PostTags from "../components/PostTags/postTags"
-import UserInfo from '../components/UserInfo/userInfo'
+import PageLayout from "../pageLayout/pageLayout";
+import PostTags from "../components/PostTags/postTags";
+import UserInfo from "../components/UserInfo/userInfo";
 // Styles
-import "../styles/templates/post.scss"
+import "../styles/templates/post.scss";
 // Images
-import fran from "../../content/images/fran_2019_crop.jpg"
+import fran from "../../content/images/fran_2019_crop.jpg";
 
 export const article_Query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(slug: { eq: $slug }) {
       frontmatter {
         title
         date(formatString: "DD-MMMM-YYYY")
@@ -32,24 +33,24 @@ export const article_Query = graphql`
           }
         }
       }
-      fields {
-        slug
-      }
-      timeToRead
-      excerpt
-      html
+      body
     }
   }
-`
-const Post = props => {
-  let article = props.data.markdownRemark
-  //console.log(article)
-  let thumbnail
+`;
+
+console.log("article_Query", article_Query);
+
+export default ({ data, pageContext }) => {
+  const { frontmatter, body } = data.mdx;
+
+  let article = data.mdx;
+  console.log(article)
+  let thumbnail;
   if (article.frontmatter.thumbnail) {
-    thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed
+    thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed;
   }
 
-  const twitterShare = `http://twitter.com/share?text=${props.data.markdownRemark.frontmatter.title}&url=${config.siteUrl}/${props.data.markdownRemark.fields.slug}/&via=fco.mirv`
+  const twitterShare = `http://twitter.com/share?text=${article.frontmatter.title}&url=${config.siteUrl}/${article.slug}/&via=fco.mirv`;
 
   return (
     <PageLayout>
@@ -82,15 +83,11 @@ const Post = props => {
           </div>
         </div>
 
-        <div
-          className="post"
-          dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-        />
+        <MDXRenderer>{body}</MDXRenderer>
+
       </div>
 
       <UserInfo config={config} />
     </PageLayout>
-  )
-}
-
-export default Post
+  );
+};
