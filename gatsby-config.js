@@ -181,7 +181,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map((edge) => ({
+              return ctx.query.allMdx.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 last_modified: edge.node.frontmatter.last_modified,
@@ -197,7 +197,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: {
                   order: [DESC, DESC]
@@ -209,9 +209,7 @@ module.exports = {
                     excerpt(pruneLength: 180)
                     html
                     timeToRead
-                    fields {
-                      slug
-                    }
+                    slug
                     frontmatter {
                       title
                       date(formatString: "DD-MMMM-YYYY")
