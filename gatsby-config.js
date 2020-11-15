@@ -187,8 +187,8 @@ module.exports = {
                 last_modified: edge.node.frontmatter.last_modified,
                 title: edge.node.frontmatter.title,
                 description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
+                url: rssMetadata.site_url + edge.node.slug,
+                guid: rssMetadata.site_url + edge.node.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
                   { author: config.userEmail },
