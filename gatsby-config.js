@@ -4,19 +4,18 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const urljoin = require("url-join")
-const config = require("./data/siteConfig")
+const urljoin = require("url-join");
+const config = require("./data/siteConfig");
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
-    title: 'Francisco Mir',
-    author: 'Francisco Mir',
+    title: "Francisco Mir",
+    author: "Francisco Mir",
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    description:
-      'Over 15+ years of experience willing to share...',
-    feedUrl: 'https://www.franciscomir.io/rss.xml',
-    logo: 'https://www.franciscomir.io/logo.png',
+    description: "Over 15+ years of experience willing to share...",
+    feedUrl: "https://www.franciscomir.io/rss.xml",
+    logo: "https://www.franciscomir.io/logo.png",
     rssMetadata: {
       site_url: urljoin(config.siteUrl, config.pathPrefix),
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
@@ -158,10 +157,10 @@ module.exports = {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = "Francisco Mir"
-          return ret
+          const ret = ref.query.site.siteMetadata.rssMetadata;
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.generator = "Francisco Mir";
+          return ret;
         },
         query: `
         {
@@ -181,8 +180,8 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              const { rssMetadata } = ctx.query.site.siteMetadata;
+              return ctx.query.allMarkdownRemark.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 last_modified: edge.node.frontmatter.last_modified,
@@ -194,7 +193,7 @@ module.exports = {
                   { "content:encoded": edge.node.html },
                   { author: config.userEmail },
                 ],
-              }))
+              }));
             },
             query: `
             {
@@ -231,5 +230,20 @@ module.exports = {
         ],
       },
     },
+
+    /** A Gatsby plugin for styled-components with built-in server-side rendering support.
+     * https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/?=styled
+     */
+    `gatsby-plugin-styled-components`,
+
+    /** Plugin to integrate Markdown with JSX
+     * https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/?=mdx
+     */
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
   ],
-}
+};
