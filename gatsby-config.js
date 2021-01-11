@@ -88,6 +88,11 @@ module.exports = {
       },
     },
 
+    /** A Gatsby plugin for styled-components with built-in server-side rendering support.
+     * https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/?=styled
+     */
+    `gatsby-plugin-styled-components`,
+
     /** Exposes several image processing functions built on the Sharp image processing library
      * https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/?= */
     "gatsby-plugin-sharp",
@@ -140,6 +145,7 @@ module.exports = {
       },
     },
     "gatsby-remark-responsive-iframe",
+
     /** Plugin to  subscribe new email addresses to a Mailchimp email list.
      * https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/
      */
@@ -229,11 +235,6 @@ module.exports = {
       },
     },
 
-    /** A Gatsby plugin for styled-components with built-in server-side rendering support.
-     * https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/?=styled
-     */
-    `gatsby-plugin-styled-components`,
-
     /** Plugin to integrate Markdown with JSX
      * https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/?=mdx
      */
@@ -242,6 +243,25 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
       },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 1035,
+            sizeByPixelDensity: true,
+            showCaptions: true,
+            linkImagesToOriginal: false,
+          },
+        },
+      ],
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 540,
+          },
+        },
+      ],
     },
   ],
 };
