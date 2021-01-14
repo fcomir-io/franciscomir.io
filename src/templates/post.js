@@ -12,9 +12,15 @@ import PageLayout from "../pageLayout/pageLayout";
 import PostTags from "../components/PostTags/postTags";
 import UserInfo from "../components/UserInfo/userInfo";
 // Styles
+import styled from "styled-components";
 import "../styles/templates/post.scss";
 // Images
 import fran from "../../content/images/fran_2019_crop.jpg";
+
+const Image = styled(Img)`
+  border-radius: 5px;
+  max-width: 300px;  
+`;
 
 export const article_Query = graphql`
   query($slug: String!) {
@@ -27,8 +33,11 @@ export const article_Query = graphql`
         category
         thumbnail {
           childImageSharp {
-            fixed(width: 150, height: 150) {
+            fixed(width: 175, height: 175) {
               ...GatsbyImageSharpFixed
+            }
+            sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
+              ...GatsbyImageSharpSizes_tracedSVG
             }
           }
         }
@@ -38,13 +47,11 @@ export const article_Query = graphql`
   }
 `;
 
-console.log("article_Query", article_Query);
-
 export default ({ data, pageContext }) => {
   const { frontmatter, body } = data.mdx;
 
   let article = data.mdx;
-  console.log(article)
+  console.log(article);
   let thumbnail;
   if (article.frontmatter.thumbnail) {
     thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed;
@@ -84,7 +91,6 @@ export default ({ data, pageContext }) => {
         </div>
 
         <MDXRenderer>{body}</MDXRenderer>
-
       </div>
 
       <UserInfo config={config} />
