@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "./src/context/ThemeContext";
 import { MDXProvider } from "@mdx-js/react";
 import Code from "./src/components/MdxComponents/code";
-import Img from "gatsby-image";
+import EmbeddedImage from "./src/components/MdxComponents/embeddedImage";
 
 const components = {
   h2: ({ children }) => <h2 style={{ color: "blue" }}>{children}</h2>,
@@ -20,6 +20,15 @@ const components = {
         />
       );
     }
+  },
+  "p.img": (props) => {
+    return (
+      <EmbeddedImage
+        imageSource={props.src.trim()}
+        imageCaption={props.alt.trim()}
+        {...props}
+      />
+    );
   },
 };
 
