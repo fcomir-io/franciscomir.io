@@ -40,9 +40,7 @@ const CopyCode = styled.button`
   }
 `;
 
-const Code = ({ codeString, language, ...props }) => {
-
-  console.log("CODE: ", props)
+const Code = ({ codeString, language, ...props }) => {  
 
   const [isCopied, setIsCopied] = React.useState(false);
 
