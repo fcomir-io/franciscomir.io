@@ -2,6 +2,18 @@ import React from "react";
 // Components from Gatsby library
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+// Styles
+import styled from "styled-components";
+
+const Image = styled(Img)`
+  border-radius: 5px;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: $primary-color;
+`;
 
 export default ({ imageSource, imageCaption, ...props }) => {
   /** Get Image Name based on imageSource */
@@ -42,7 +54,7 @@ export default ({ imageSource, imageCaption, ...props }) => {
             modifiedTime
             name
             childImageSharp {
-              fluid(maxWidth: 1240) {
+              fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -69,5 +81,5 @@ export default ({ imageSource, imageCaption, ...props }) => {
   });
   console.log("embeddedImageSource", temp);
 
-  return <>{!temp ? "undefined" : <Img fluid={temp} />}</>;
+  return <>{!temp ? "undefined" : <Image fluid={temp} />}</>;
 };

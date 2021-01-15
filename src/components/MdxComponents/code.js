@@ -10,6 +10,9 @@ const Pre = styled.pre`
   margin: 1em 0;
   padding: 0.5em;
   overflow: scroll;
+  min-height: 75px;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: $primary-color;
 `;
 
 const Line = styled.div`

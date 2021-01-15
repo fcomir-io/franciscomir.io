@@ -3,9 +3,20 @@ import { ThemeProvider } from "./src/context/ThemeContext";
 import { MDXProvider } from "@mdx-js/react";
 import Code from "./src/components/MdxComponents/code";
 import EmbeddedImage from "./src/components/MdxComponents/embeddedImage";
+// Styles
+import styled from "styled-components";
+import "./src/styles/main.scss";
+
+const StyledH2 = styled.h2`
+  font-height: 1.3rem;
+  text-decoration: underline lightgray;
+  text-decoration-style: 10px solid;
+  text-underline-position: under;
+  padding-top: 1.5rem;
+`;
 
 const components = {
-  h2: ({ children }) => <h2 style={{ color: "blue" }}>{children}</h2>,
+  h2: ({ children }) => <StyledH2>{children}</StyledH2>,
   h3: ({ children }) => <h3 style={{ color: "red" }}>{children}</h3>,
   "p.inlineCode": (props) => (
     <code {...props} style={{ backgroundColor: "lightgray" }}></code>
