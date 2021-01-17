@@ -30,6 +30,7 @@ const StyledVideo = styled.iframe`
   margin-left: auto;
   margin-right: auto;
   padding: 1.3rem 0;
+  max-width: 100%;
 `;
 
 const components = {
