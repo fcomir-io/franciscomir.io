@@ -14,14 +14,10 @@ export default class PostListing extends React.Component {
     //console.log("postEdges", postEdges)
     const postList = postEdges.map(edge => {
       return {
-        path: `/blog/${edge.node.fields.slug}`,
+        path: `/blog/${edge.node.slug}`,
         title: edge.node.frontmatter.title,
         date: edge.node.frontmatter.date,
         last_modified: edge.node.frontmatter.last_modified,
-        timeToRead: edge.node.timeToRead,
-        excerpt: edge.node.excerpt,
-        tags: edge.node.frontmatter.tags,
-        category: edge.node.frontmatter.category,
         thumbnail: edge.node.frontmatter.thumbnail,
       }
     })

@@ -1,29 +1,31 @@
 // React libraries
-import React, { Component } from "react"
-import { Helmet } from "react-helmet"
+import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 // Components from Gatsby library
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby";
 // Internal applicaiton data
-import config from "../../data/siteConfig"
+import config from "../../data/siteConfig";
 // Components
-import PageLayout from "../pageLayout/pageLayout"
-import PostListing from "../components/PostListing/postListing"
+import PageLayout from "../pageLayout/pageLayout";
+import PostListing from "../components/PostListing/postListing";
 // Styles
-import "../styles/templates/tag.scss"
+import "../styles/templates/tag.scss";
 
 export default class TagTemplate extends Component {
   render() {
-    const { tag } = this.props.pageContext
-    const postEdges = this.props.data.allMarkdownRemark.edges
+    console.log("Props", this.props);
 
-    const counter = postEdges.length
-    let foundTextToShow = ""
+    const { tag } = this.props.pageContext;
+    const postEdges = this.props.data.allMdx.edges;
+
+    const counter = postEdges.length;
+    let foundTextToShow = "";
     if (counter < 2) {
-      foundTextToShow = "post found!"
+      foundTextToShow = "post found!";
     } else {
-      foundTextToShow = "posts found!"
+      foundTextToShow = "posts found!";
     }
-    //console.log("counter", counter)
+    console.log("counter", counter);
 
     return (
       <PageLayout>
@@ -47,13 +49,13 @@ export default class TagTemplate extends Component {
           </div>
         </div>
       </PageLayout>
-    )
+    );
   }
 }
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
@@ -65,8 +67,6 @@ export const pageQuery = graphql`
             title
             date(formatString: "DD-MMMM-YYYY")
             last_modified(formatString: "DD-MMMM-YYYY")
-            tags
-            category
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {
@@ -75,14 +75,9 @@ export const pageQuery = graphql`
               }
             }
           }
-          fields {
-            slug
-          }
-          timeToRead
-          excerpt
-          html
+          slug          
         }
       }
     }
   }
-`
+`;

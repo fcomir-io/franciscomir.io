@@ -24,12 +24,12 @@ export default function Home() {
   /** Query to get list of available posts */
   const allPostEdges_Query = useStaticQuery(graphql`
     query {
-      posts: allMarkdownRemark(
-        limit: 5
+      posts: allMdx(
         sort: {
           order: [DESC, DESC]
           fields: [frontmatter___last_modified, frontmatter___date]
         }
+        limit: 10
       ) {
         edges {
           node {
@@ -37,8 +37,6 @@ export default function Home() {
               title
               date(formatString: "DD-MMMM-YYYY")
               last_modified(formatString: "DD-MMMM-YYYY")
-              tags
-              category
               thumbnail {
                 childImageSharp {
                   fixed(width: 150, height: 150) {
@@ -50,19 +48,14 @@ export default function Home() {
                 }
               }
             }
-            fields {
-              slug
-            }
-            timeToRead
-            excerpt
-            html
+            slug
           }
         }
       }
     }
   `)
   const posts = allPostEdges_Query.posts.edges
-
+  console.log("index-Posts", posts)
   return (
     <PageLayout>
       <Helmet title={`${config.siteTitle} – ${config.siteSlogan}`} />
