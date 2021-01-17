@@ -1,11 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "./src/context/ThemeContext";
 import { MDXProvider } from "@mdx-js/react";
+// Mdx Components
 import Code from "./src/components/MdxComponents/code";
 import EmbeddedImage from "./src/components/MdxComponents/embeddedImage";
 // Styles
 import styled from "styled-components";
-import "./src/styles/main.scss";
 
 const StyledH2 = styled.h2`
   font-height: 1.3rem;
@@ -29,7 +29,8 @@ const StyledVideo = styled.iframe`
   margin: 0;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.3rem 0;
+  padding: 0;
+  padding-bottom: 1rem;
   max-width: 100%;
 `;
 
