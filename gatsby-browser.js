@@ -13,14 +13,21 @@ const StyledH2 = styled.h2`
   text-decoration-style: 10px solid;
   text-underline-position: under;
   padding: 0;
-  padding-top: 1.5rem;
+  padding-top: 1.3rem;
 `;
 
-const StyledH3 = styled.h2`
+const StyledH3 = styled.h3`
   font-height: 1rem;
   font-style: bold;
   padding: 0;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
+`;
+
+const StyledH4 = styled.h4`
+  font-height: 0.7rem;
+  font-style: normal;
+  padding: 0;
+  padding-top: 0.6rem;
 `;
 
 const StyledVideo = styled.iframe`
@@ -34,9 +41,16 @@ const StyledVideo = styled.iframe`
   max-width: 100%;
 `;
 
+const StyledP = styled.p`
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+`;
+
 const components = {
   h2: ({ children }) => <StyledH2>{children}</StyledH2>,
   h3: ({ children }) => <StyledH3>{children}</StyledH3>,
+  h4: ({ children }) => <StyledH4>{children}</StyledH4>,
+
   "p.inlineCode": (props) => (
     <code {...props} style={{ backgroundColor: "lightgray" }}></code>
   ),
@@ -61,6 +75,10 @@ const components = {
     );
   },
   iframe: (props) => <StyledVideo {...props} />,
+
+  li: ({ children: { props } }) => {
+    return <li {...props}></li>;
+  },
 };
 
 /** To provide the root with the ThemeContext */
