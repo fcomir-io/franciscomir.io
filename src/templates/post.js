@@ -25,7 +25,7 @@ const Image = styled(Img)`
 export const article_Query = graphql`
   query($slug: String!) {
     mdx(slug: { eq: $slug }) {
-      frontmatter {
+      frontmatter {        
         title
         date(formatString: "DD-MMMM-YYYY")
         last_modified(formatString: "DD-MMMM-YYYY")
@@ -42,6 +42,7 @@ export const article_Query = graphql`
           }
         }
       }
+      slug
       body
     }
   }
@@ -58,7 +59,7 @@ export default ({ data, pageContext }) => {
     thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed;
   }
 
-  const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${config.siteUrl}/blog/${article.fields.slug}?media=${thumbnail}`;
+  const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${config.siteUrl}/blog/${article.slug}?media=${thumbnail}`;
 
   return (
     <PageLayout>
