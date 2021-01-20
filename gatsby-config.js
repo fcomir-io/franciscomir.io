@@ -264,5 +264,28 @@ module.exports = {
         },
       ],
     },
+    /** Gatsby plugin to add google analytics, google tag manager and facebook pixel in a GDPR form to your site.
+     *  https://www.gatsbyjs.com/plugins/gatsby-plugin-gdpr-cookies/ */
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // here can you change the cookie name
+          anonymize: true, // default
+        },
+        googleTagManager: {
+          trackingId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-tagmanager", // // here can you change the cookie name
+          dataLayerName: "dataLayer", // default
+        },
+        facebookPixel: {
+          pixelId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-facebook-pixel", // // here can you change the cookie name
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
+      },
+    },
   ],
 };
