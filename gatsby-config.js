@@ -28,6 +28,7 @@ module.exports = {
     },
   },
   /* Your site config here */
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     /** Provides drop-in support for SASS/SCSS stylesheets */
     `gatsby-plugin-sass`,
