@@ -1,26 +1,28 @@
 // React libraries
-import React, { useContext } from "react"
-import { Helmet } from "react-helmet"
+import React, { useContext } from "react";
+import { Helmet } from "react-helmet";
 // Context for Dark/Light Theme
-import ThemeContext from "../context/ThemeContext"
+import ThemeContext from "../context/ThemeContext";
 // Internal applicaiton data
-import config from "../../data/siteConfig"
+import config from "../../data/siteConfig";
 // Components
-import Navigation from "../components/Navigation/navigation"
-import Footer from "../components/Footer/footer"
+import Navigation from "../components/Navigation/navigation";
+import Footer from "../components/Footer/footer";
 // CSS
-import "./pageLayout.scss"
+import "./pageLayout.scss";
 // Images
-import favicon from "../images/favicon.png"
+import favicon from "../images/favicon.png";
+// GDPR Management
+import CookieConsent from "react-cookie-consent";
 
 export default function PageLayout(props) {
-  const { dark } = useContext(ThemeContext)
-  const { children } = props
-  let themeClass = ""
+  const { dark } = useContext(ThemeContext);
+  const { children } = props;
+  let themeClass = "";
 
   /** Get Theme from context */
   if (dark) {
-    themeClass = "dark"
+    themeClass = "dark";
   }
 
   return (
@@ -42,6 +44,19 @@ export default function PageLayout(props) {
         <main id="main-content">{children}</main>
       </div>
       <Footer />
+      <CookieConsent
+        location="bottom"
+        disableStyles={true}
+        hideOnAccept={true}
+        buttonText="Accept"
+        cookieName="franciscomir-gdpr"
+        expires={90}
+        buttonClasses="btn-custom-class"
+        contentClasses="content-custom-class"
+        containerClasses="container-custom-class"
+      >
+        This website uses cookies to enhance the user experience.{" "}
+      </CookieConsent>
     </>
-  )
+  );
 }

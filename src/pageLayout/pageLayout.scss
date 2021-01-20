@@ -12,13 +12,52 @@
   padding: 0 0.7rem;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3rem;  
+  margin-bottom: 3rem;
+}
+
+.container-custom-class {
+  background-color: lighten($primary-color, 10%);
+  align-items: baseline;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  .content-custom-class {
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 5px 15px;
+    margin: 5px 15px;
+  }
+
+  .btn-custom-class {
+    background-color: $primary-color;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 5px 15px;
+    margin: 5px 25px;
+  }
 }
 
 /** Screens bigger than 420px */
 @include x-small-breakpoint {
   /** Nothing to configure */
-  .page-container {    
+  .page-container {
     //background-color: indigo;
   }
 }
@@ -32,7 +71,7 @@
 
   .page-container {
     width: 95%;
-    margin: 0 auto;    
+    margin: 0 auto;
     //background-color: blue;
   }
 }
@@ -46,7 +85,7 @@
 
   .page-container {
     width: 90%;
-    margin: 0 auto;    
+    margin: 0 auto;
     //background-color: green;
   }
 }
