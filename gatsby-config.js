@@ -4,19 +4,18 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const urljoin = require("url-join")
-const config = require("./data/siteConfig")
+const urljoin = require("url-join");
+const config = require("./data/siteConfig");
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
-    title: 'Francisco Mir',
-    author: 'Francisco Mir',
+    title: "Francisco Mir",
+    author: "Francisco Mir",
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    description:
-      'Over 15+ years of experience willing to share...',
-    feedUrl: 'https://www.franciscomir.io/rss.xml',
-    logo: 'https://www.franciscomir.io/logo.png',
+    description: "Over 15+ years of experience willing to share...",
+    feedUrl: "https://www.franciscomir.io/rss.xml",
+    logo: "https://www.franciscomir.io/logo.png",
     rssMetadata: {
       site_url: urljoin(config.siteUrl, config.pathPrefix),
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
@@ -89,6 +88,11 @@ module.exports = {
       },
     },
 
+    /** A Gatsby plugin for styled-components with built-in server-side rendering support.
+     * https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/?=styled
+     */
+    `gatsby-plugin-styled-components`,
+
     /** Exposes several image processing functions built on the Sharp image processing library
      * https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/?= */
     "gatsby-plugin-sharp",
@@ -141,6 +145,7 @@ module.exports = {
       },
     },
     "gatsby-remark-responsive-iframe",
+
     /** Plugin to  subscribe new email addresses to a Mailchimp email list.
      * https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/
      */
@@ -158,10 +163,10 @@ module.exports = {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = "Francisco Mir"
-          return ret
+          const ret = ref.query.site.siteMetadata.rssMetadata;
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.generator = "Francisco Mir";
+          return ret;
         },
         query: `
         {
@@ -181,24 +186,24 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              const { rssMetadata } = ctx.query.site.siteMetadata;
+              return ctx.query.allMdx.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 last_modified: edge.node.frontmatter.last_modified,
                 title: edge.node.frontmatter.title,
                 description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
+                url: rssMetadata.site_url + edge.node.slug,
+                guid: rssMetadata.site_url + edge.node.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
                   { author: config.userEmail },
                 ],
-              }))
+              }));
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: {
                   order: [DESC, DESC]
@@ -210,9 +215,7 @@ module.exports = {
                     excerpt(pruneLength: 180)
                     html
                     timeToRead
-                    fields {
-                      slug
-                    }
+                    slug
                     frontmatter {
                       title
                       date(formatString: "DD-MMMM-YYYY")
@@ -231,5 +234,34 @@ module.exports = {
         ],
       },
     },
+
+    /** Plugin to integrate Markdown with JSX
+     * https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/?=mdx
+     */
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 1035,
+            sizeByPixelDensity: true,
+            showCaptions: true,
+            linkImagesToOriginal: false,
+          },
+        },
+      ],
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 540,
+          },
+        },
+      ],
+    },
   ],
-}
+};
