@@ -258,7 +258,7 @@ function ContactPage() {
                   onChange={handleOnCheckBoxChange}
                   className="form-check-input"
                 />
-              I have read the <Link className="privacy-policy" to="/privacyPolicy">Privacy and Cookies Policy</Link>
+              {" "} I have read the <Link className="privacy-policy" to="/privacyPolicy">Privacy and Cookies Policy</Link>
               <strong className="input-required">*</strong>
               </label>
             </div>
