@@ -3,6 +3,7 @@
 a {
   text-decoration: none;
   color: $primary-color;
+  font-weight: 550;
 }
 
 .bio-general {
@@ -73,6 +74,12 @@ a {
     margin: 0 auto;
   }
 
+  .bio-general {  
+    .general-image {
+      display: block;
+    }
+  }
+
   .bio-sport {
     display: flex;
     flex-direction: row;
@@ -86,6 +93,7 @@ a {
     } 
     
     .sport-image {
+      display: block;
       width: 40%;
       margin: 0 1rem;
     }
@@ -106,6 +114,7 @@ a {
     } 
     
     .art-music-image {
+      display: block;
       width: 40%;
       margin: 0 1rem;
     }

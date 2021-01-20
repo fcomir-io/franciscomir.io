@@ -56,20 +56,22 @@
   align-items: flex-start;
 
   a {
-    font-size: 1.1rem;
     padding: 0.7rem 1.5rem;
     margin-right: 2rem;
     border: none !important;
     background: white;
     text-decoration: none;
     font-size: 18px;
+    font-weight: bolder;
     border-radius: $border-radius;
-    color: darken($primary-color, 5%);
-    background-color: rgb(218, 210, 210);
+    background: $primary-color;
+    color: $secondary-color;
+
     &:hover,
     &:active,
     &:focus {
-      color: darken($primary-color, 40%);
+      color: $primary-color;
+      background-color: $secondary-color;
     }
   }
 }

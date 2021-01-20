@@ -4,13 +4,14 @@
     a {
       display: inline-block;
     }
+
     span {
       display: inline-block;
-      padding: 0.3rem 0.5rem;
-      background: lighten($dark-background, 70%);
+      padding: 0.3rem 0.5rem;      
       border-radius: $border-radius;
-      color: lighten($light-font-color__title, 10%);
-      font-size: 0.9rem;
+      background: $primary-color;
+      color: $secondary-color;
+      font-size: 1rem;
       font-weight: 500;
       margin: 0 0.5rem 0.5rem 0;
   
@@ -23,8 +24,8 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($dark-background, 50%);;
-        color: $light-font-color__text;
+        color: $primary-color;
+        background-color: $secondary-color;  
       }
     }
   

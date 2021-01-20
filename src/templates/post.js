@@ -52,12 +52,13 @@ export default ({ data, pageContext }) => {
 
   let article = data.mdx;
   console.log(article);
+
   let thumbnail;
   if (article.frontmatter.thumbnail) {
     thumbnail = article.frontmatter.thumbnail.childImageSharp.fixed;
   }
 
-  const twitterShare = `http://twitter.com/share?text=${article.frontmatter.title}&url=${config.siteUrl}/${article.slug}/&via=fco.mirv`;
+  const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${config.siteUrl}/blog/${article.fields.slug}?media=${thumbnail}`;
 
   return (
     <PageLayout>
@@ -69,17 +70,18 @@ export default ({ data, pageContext }) => {
               <h1>{article.frontmatter.title}</h1>
             </div>
             <div className="post-meta">
-              <Link to="/me">
+              <Link to="/about">
                 <img src={fran} className="avatar-small" alt="Francisco Mir" />
               </Link>
-              <time className="date">{article.frontmatter.date}</time>/
+              <time className="date">{article.frontmatter.date}</time>
+              
               <a
-                className="twitter-link"
-                href={twitterShare}
+                className="linkedIn-link"
+                //href={linkedInShare}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Share
+                Share on LinkedIn
               </a>
             </div>
 

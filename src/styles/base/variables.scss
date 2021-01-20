@@ -33,27 +33,37 @@ $footer-padding-medium: 8%;
 $footer-padding-large: 12%;
 
 /* Colors */
-$light-background: #f8ffff;
-$dark-background: #2c2b2b;
-$light-navigation-shadow: rgba(46, 163, 134, 0.658);
-$light-navigation-menu__hover: rgba(202, 236, 216, 0.637);
-$light-footer-background: #4fcfc5;
-$primary-color: rgba(17, 122, 96, 0.658);
-$secondary-color: rgba(55, 128, 100, 0.658);
+$primary-color: #00897b;
+$secondary-color: #b2fef7;
 
-/* Typography */
+$light-background: #ffffff;
+$dark-background: #000C0B;//2c2b2b;
 
-// Body font
+// Navigation
+$light-navigation-shadow: $primary-color;
+$light-navigation-font-color__text: rgba(0, 0, 0, 0.6);
+$light-navigation-menu__hover: lighten($primary-color, 5%);
+$light-navigation-menu__hover-text: #B2FEF7;
 
+// Footer
+$light-footer-link__hover-text: $secondary-color;
+
+// Body
 $light-font-color__title: rgba(0, 0, 0, 0.6);
-$light-font-color__text: rgba(0, 0, 0, 0.6);
-$light-font-color__link: rgba(9, 87, 67, 0.658);
+$light-font-color__text: $light-font-color__title;
 $light-font-color: $light-font-color__title;
-$dark-font-color__title: #28a79c;
-$dark-font-color__text: #28a79c;
+
+$light-font-color__link: $primary-color;
+
+// Dark Mode
+$dark-font-color__title: $secondary-color;
+$dark-font-color__text: $dark-font-color__title;
 $dark-font-color__link: #28a79c;
 $dark-font-color__highlighted: #076335;
 $dark-font-color: $dark-font-color__title;
+
+/* Typography */
+
 
 // Headings
 
