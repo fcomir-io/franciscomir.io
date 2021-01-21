@@ -204,7 +204,7 @@ function SubscribePage() {
                           setBirthDay(e.target.value)
                         }}
                       />
-                      <span> / </span>
+                      <span>{" "} / {" "}</span>
                       <input
                         type="text"
                         pattern="[0-9]*"
@@ -216,7 +216,7 @@ function SubscribePage() {
                           setBirthMonth(e.target.value)
                         }}
                       />
-                      <span>[ dd / mm ]</span>
+                      <span>{" "} [ dd / mm ]</span>
                     </div>
                   </div>
                 </Collapsible>
