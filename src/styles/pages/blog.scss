@@ -4,16 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   p {
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.3rem;
-    color: $primary-color;
+    color: #006e62;
     margin-bottom: 1.5rem;
   }
 
-  .category-container {    
+  .category-container {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 1.5rem;
@@ -24,15 +24,17 @@
       align-items: center;
       cursor: pointer;
       text-decoration: none;
-      font-size: 1rem;      
-      font-weight: 800;      
+      font-size: 1rem;
+      font-weight: 800;
       padding: 0.5rem 0.75rem;
       background: $primary-color;
-      color: $secondary-color;
+      border: 1px solid $primary-color;
       border-radius: $border-radius;
+      color: $light-background;
       margin-right: 0.5rem;
-      margin-bottom: 0.5rem; 
+      margin-bottom: 0.5rem;
 
+      /*
       .count {
         display: flex;
         align-items: center;
@@ -45,30 +47,17 @@
         border-radius: 50%;
         padding: 5px 5px 5px 5px;
       }
+      */
 
-      &.active {
-        background: $primary-color;
-        color: $secondary-color;
-
-        .count {
-          background: white;
-        }
-
-        &:hover,
-        &:active,
-        &:focus {
-          background: $secondary-color;
-          color: $primary-color;
-        }
+      &:hover,
+      &:focus {
+        background: #60c1b3;
+        border: 1px solid #00524a;
+        color: #00524a;
       }
 
       &:last-of-type {
         margin-right: 0;
-      }
-
-      &:hover {
-        background: lighten($primary-color, 28%);
-        color: darken($primary-color, 5%);
       }
     }
   }
@@ -77,11 +66,12 @@
     display: flex;
     align-items: center;
     max-width: 500px;
-    margin-bottom: 2rem;   
+    margin-bottom: 2rem;
   }
 
   .search {
     margin-bottom: 0;
+    border: 1px solid $primary-color;
   }
 
   .filter-count {
@@ -99,5 +89,5 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
-  color: $primary-color;
+  color: #006e62;
 }

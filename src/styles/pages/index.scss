@@ -20,7 +20,7 @@
       p {
         font-size: 1rem;
         line-height: 1.7;
-        text-align: left;        
+        text-align: left;
 
         a {
           text-decoration: none;
@@ -28,7 +28,6 @@
           font-weight: 700;
         }
       }
-
     }
     .direct-contact-section {
       display: flex;
@@ -56,36 +55,42 @@
       }
 
       margin-top: 1.5rem;
-      /*
+
       .subscribe-button {
         margin: 0.5rem 0rem;
         font-size: 1rem;
         padding: 0.3rem 2rem;
-        border: none !important;
         background: $primary-color;
+        border: 1px solid $primary-color;
         border-radius: $border-radius;
+        color: $light-background;
 
         a {
           text-decoration: none;
-          color: white;
+          color: $light-background;
+          border: 0px;
         }
+
         .react-icons {
           margin-right: 0.3rem;
           margin-top: 0.3rem;
           vertical-align: text-bottom;
-          color: white;
+          color: $light-background;
         }
 
         &:hover,
-        &:active,
         &:focus {
+          background: #60C1B3;
+          border: 1px solid #00524A;
+          color: #00524A;
           a,
           .react-icons {
-            color: darken($primary-color, 20%);
-          }
+            color: #00524A;
+            background: #60C1B3;
+            border: 0px;
+          } 
         }
       }
-      */
     }
   }
 
@@ -120,18 +125,20 @@
       a.view-all {
         display: inline-block;
         padding: 0.5rem 0.75rem;
-        background: lighten($dark-background, 70%);
+        background: $primary-color;
+        border: 1px solid $primary-color;
         border-radius: $border-radius;
-        color: lighten($light-font-color__title, 10%);
+        color: $light-background;
         font-size: 0.8rem;
         font-weight: 500;
         text-decoration: none;
         margin-top: 2px;
-        //margin-bottom: 2px;
 
         &:hover,
         &:focus {
-          background: lighten($dark-background, 50%);
+          background: #60C1B3;
+          border: 1px solid #00524A;
+          color: #00524A;
         }
       }
     }
@@ -198,7 +205,6 @@
       margin-right: 3rem;
 
       .index-pitch {
-
         h1 {
           margin-top: 20px;
           font-size: 3rem;

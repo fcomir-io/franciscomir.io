@@ -1,6 +1,13 @@
 @import "../main.scss";
 
 .contact-form {
+
+  border: 1px solid #4EBAAA;
+  box-shadow: 1px 2px 15px rgba(#4EBAAA, 0.2);
+  padding: 2rem;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+
   p {
     //padding: 0 1rem;
     margin-bottom: 0.5rem;
@@ -9,7 +16,6 @@
   .indicates-required {
     text-align: right;
     font-size: 16px;
-    //padding-right: 1rem;    
   }
 
   .input-required {
@@ -17,15 +23,16 @@
     font-size: 22px;
   }
 
+  /*
   .contact-form-input {
-    //background-color: greenyellow;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
     justify-content: center;
 
-    h1 {
+    h3 {
       margin: 0;
+      color: #282828;
     }
 
     input,
@@ -33,11 +40,16 @@
       margin-top: 0.3rem;
       line-height: 40px;
       text-align: left;
-      background-color: white;//rgb(186, 204, 223);
+      background-color: white; //rgb(186, 204, 223);
+      border: 1px solid #cdcdcd;
       border-radius: 7px;
+      color: #000000;
 
       &.only-lower-case {
         text-transform: lowercase;
+      }
+      &.focus {
+        border: purple;
       }
     }
   }
@@ -67,8 +79,9 @@
       }
     }
   }
+  */
 
-  .privacy-policy-checkbox {    
+  .privacy-policy-checkbox {
     text-align: center;
     line-height: 40px;
   }
@@ -77,21 +90,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     .submit-button {
       margin: 0.5rem;
       font-size: 1.1rem;
-      padding: 0.8rem 1.3rem;
-      border: none !important;      
+      padding: 0.5rem 1.2rem;
       text-decoration: none;
-      border-radius: $border-radius;
       background: $primary-color;
-      color: $secondary-color;
+      border: 1px solid $primary-color;
+      border-radius: $border-radius;
+      color: $light-background;
+
       &:hover,
       &:active,
-      &:focus {        
+      &:focus {
         cursor: pointer;
-        color: $primary-color;
-        background: $secondary-color;
+        background: #60c1b3;
+        border: 1px solid #00524a;
+        color: #00524a;
       }
     }
   }
@@ -104,9 +120,9 @@
 
 /** Screens bigger than 620px */
 @include small-breakpoint {
-  .contact-form {   
+  .contact-form {
     .indicates-required {
-      padding-right: 1rem;    
+      padding-right: 1rem;
     }
   }
 }
@@ -116,6 +132,7 @@
   .contact-form {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 1rem;
   }
 }
 
@@ -124,5 +141,6 @@
   .contact-form {
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 1rem;
   }
 }

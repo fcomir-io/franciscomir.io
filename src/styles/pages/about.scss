@@ -3,7 +3,7 @@
 .short-bio {
   margin: 0 auto;
   margin-bottom: 3rem;
-  
+
   p {
     line-height: 1.7;
     font-size: 1rem;
@@ -36,7 +36,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 1.5rem;
-    padding: 0;    
+    padding: 0;
 
     h2 {
       font-size: 18px;
@@ -58,20 +58,20 @@
   a {
     padding: 0.7rem 1.5rem;
     margin-right: 2rem;
-    border: none !important;
-    background: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bolder;
-    border-radius: $border-radius;
     background: $primary-color;
-    color: $secondary-color;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    color: $light-background;
 
     &:hover,
     &:active,
     &:focus {
-      color: $primary-color;
-      background-color: $secondary-color;
+      background: #60c1b3;
+      border: 1px solid #00524a;
+      color: #00524a;
     }
   }
 }

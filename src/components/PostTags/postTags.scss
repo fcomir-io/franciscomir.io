@@ -1,35 +1,37 @@
 @import "../../styles/main.scss";
 
 .tag-container {
-    a {
-      display: inline-block;
+  a {
+    display: inline-block;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    color: $light-background;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0.5rem 0.5rem 0;
+
+    .count {
+      color: $light-background;
+      font-weight: 700;
+      margin-left: 0.25rem;
     }
 
-    span {
-      display: inline-block;
-      padding: 0.3rem 0.5rem;      
-      border-radius: $border-radius;
-      background: $primary-color;
-      color: $secondary-color;
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 0 0.5rem 0.5rem 0;
-  
-      .count {
-        color: $light-background;
-        font-weight: 700;
-        margin-left: 0.25rem;
-      }
-  
-      &:hover,
-      &:active,
-      &:focus {
-        color: $primary-color;
-        background-color: $secondary-color;  
-      }
-    }
-  
-    &.articles-page-tags {
-      margin-bottom: 1rem;
+    &:hover,
+    &:active,
+    &:focus {
+      background: #60c1b3;
+      border: 1px solid #00524a;
+      color: #00524a;
     }
   }
+
+  &.articles-page-tags {
+    margin-bottom: 1rem;
+  }
+}

@@ -4,7 +4,25 @@
 .dark {
   /** General Configuration */
   background: $dark-background;
-  color: white;
+
+  h1,
+  .page-title {
+    color: $secondary-color;
+  }
+
+  h2,
+  h3 {
+    color: #71c8bb;
+  }
+
+  p,
+  li {
+    color: #f2f2f2;
+
+    a {
+      color: $secondary-color;
+    }
+  }
 
   /** Navigation component */
   .nav {
@@ -18,31 +36,26 @@
     .brand {
       color: $dark-font-color__title;
 
-      &:hover {
-        color: lighten($dark-font-color__highlighted, 15%);
-      }
-
       .text {
         color: $dark-font-color__title;
       }
     }
 
     .motto {
-      color: $dark-font-color__title;
+      color: $dark-font-color__motto;
     }
 
     .menu-links a {
-      color: $dark-font-color__text;
+      color: $secondary-color;
+      border: 1px solid $dark-background;
 
       &:hover {
-        color: lighten($dark-font-color__text, 10%);
-        background: lighten($dark-background, 5%);
+        border: 1px solid $secondary-color;
       }
 
-      &:active,
       &.active {
-        color: white;
-        background: lighten($dark-background, 5%);
+        color: #003731;
+        background: $secondary-color;
       }
     }
   }
@@ -52,6 +65,24 @@
     background-color: $dark-background;
   }
 
+  /** Page Layout */
+  .container-custom-class {
+    background-color: #95d6cc;
+
+    .content-custom-class {
+      color: #006e62;
+    }
+
+    .btn-custom-class {
+      background-color: $primary-color;
+      color: white;
+
+      &:hover {
+        background-color: $secondary-color;
+        color: #006e62;
+      }
+    }
+  }
   /** Page ==> index.js */
   .summary {
     .elevator-pitch {
@@ -60,21 +91,49 @@
           color: $dark-font-color__link;
         }
       }
+      .direct-contact-section {
+        .subscribe-button {
+          background: #95d6cc;
+          color: #003731;
+
+          a,
+          .react-icons {
+            color: #003731;
+          }
+
+          &:hover,
+          &:focus {
+            background: $secondary-color;
+            color: $light-background;
+            a,
+            .react-icons {
+              color: white;
+            }
+          }
+        }
+      }
     }
   }
 
   .experience-block {
-    //background-color: rgb(193, 237, 243);
-
     .experience-box {
       .topic {
+        box-shadow: 1px 2px 15px rgba($light-navigation-shadow, 0.5);
+
+        h1 {
+          color: $secondary-color;
+        }
+
         &:hover {
-          box-shadow: 6px 12px 20px $light-navigation-shadow;
+          h1 {
+            color: #b8e3dd;
+          }
+          box-shadow: 2px 4px 20px rgba($light-navigation-shadow, 0.7);
         }
 
         &:active,
         &.active {
-          box-shadow: 12px 24px 40px $light-navigation-shadow;
+          box-shadow: 4px 8px 25px $light-navigation-shadow;
         }
       }
     }
@@ -83,13 +142,13 @@
   .articles {
     .section {
       a.view-all {
-        background: $primary-color;
-        color: $secondary-color;
+        background: #95d6cc;
+        color: #003731;
 
         &:hover,
         &:focus {
-          color: $primary-color;
-          background-color: $secondary-color;
+          background: $secondary-color;
+          color: $light-background;
         }
       }
     }
@@ -97,21 +156,52 @@
   /** ----------------------------- */
 
   /** Post Listing */
-  .posts {    
+  .posts {
     a {
       .each-post {
-        color: $secondary-color;
-
+        .icon-and-title {
+          h2 {
+            color: #f2f2f2;
+          }
+        }
         &:hover,
         &:active,
         &:focus {
-          background: darken(gray, 15%);
+          background: #9a9a9a;
+          h2 {
+            color: white;
+          }
         }
       }
+    }
+  }
 
-      .icon-and-title {
-        h2 {
-          color: $dark-font-color__title;
+  /** About */
+  .extra-info {
+    a {
+      background: #95d6cc;
+      color: #003731;
+
+      &:hover,
+      &:focus {
+        background: $secondary-color;
+        color: $light-background;
+      }
+    }
+  }
+
+  .experience-footer {
+    h1 {
+      color: #003731;
+    }
+    a {
+      background: #95d6cc;
+
+      &:hover,
+      &:focus {
+        background: $secondary-color;
+        h1 {
+          color: $light-background;
         }
       }
     }
@@ -119,39 +209,74 @@
 
   /** Blog */
   .articles-header {
-    /*
     .category-container {
-      a.category-filter {
-        color: $primary-color;
+      .category-filter {
+        background: #95d6cc;
+        color: #003731;
 
         &:hover {
-          background: lighten($secondary-color, 28%);
-          color: darken($secondary-color, 5%);
+          background: $secondary-color;
+          color: $light-background;
         }
       }
     }
-    */
   }
 
   .tag-container {
-    /*
     h1 {
+      color: #71c8bb;
+
       .tag {
-        background: $secondary-color;
-        color: $primary-color;
+        background: $dark-background;
+        color: $secondary-color;
+        border: 1px solid $secondary-color;
       }
-    }*/
+    }
+
+    h3 {
+      color: #f2f2f2;
+
+      .counter {
+        color: #71c8bb;
+      }
+    }
   }
+
   /** Collapsible */
+  .collapsible-header {
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+
+    h1,
+    .icon {
+      color: #003731;
+    }
+  }
+
+  .content {
+    border: 1px solid #686868;
+
+    .abilities {
+      h2 {
+        color: #95d6cc;
+      }
+    }
+
+    .ability-box {
+      h2 {
+        color: #ffffff;
+      }
+    }
+  }
 
   /** Popup Windows */
 
   /** Footer */
   .footer {
-    background: $dark-background;
-    color: $dark-font-color__title;
-    box-shadow: 1px 2px 18px $light-navigation-shadow;
-
+    //background: $dark-background;
+    //color: $dark-font-color__title;
+    //box-shadow: 1px 2px 18px $light-navigation-shadow;
+    /*
     a {
       color: $dark-font-color__text;
 
@@ -159,6 +284,7 @@
         color: lighten($dark-font-color__title, 20%);
       }
     }
+    */
   }
 
   /** Post Template */
@@ -191,17 +317,111 @@
     */
   }
 
-  /** common.scss File */
-  .subscribe-button {
-    a {
-      color: white;
+  /** Contact */
+  .contact-form,
+  .subscribe-form {
+    border: 1px solid #006e62;
+    box-shadow: 1px 2px 15px rgba(#006e62, 0.2);
+
+    .indicates-required {
+      color: #ffffff;
     }
 
-    &:hover,
-    &:focus {
-      a,
-      .react-icons {
-        color: $dark-font-color__text;
+    .contact-form-input {
+      h1,
+      h2,
+      h3 {
+        color: #ffffff;
+      }
+
+      input,
+      textarea {
+        margin-top: 0.3rem;
+        line-height: 40px;
+        text-align: left;
+        background-color: $dark-background; //rgb(186, 204, 223);
+        border: 1px solid #9a9a9a;
+        border-radius: 7px;
+        color: #f2f2f2;
+
+        &.only-lower-case {
+          text-transform: lowercase;
+        }
+      }
+
+      .birthday-input-form {
+        span {
+          color: #f2f2f2;
+        }
+      }
+    }
+
+    .privacy-policy-checkbox {
+      color: #f2f2f2;
+      a {
+        color: $secondary-color;
+      }
+    }
+
+    .container-submit-button {
+      .submit-button {
+        background: #95d6cc;
+        color: #003731;
+
+        &:hover {
+          background: $secondary-color;
+          color: $light-background;
+        }
+      }
+    }
+
+    .required-fields {
+      .submit-button {
+        background: #95d6cc;
+        color: #003731;
+
+        &:hover {
+          background: $secondary-color;
+          color: $light-background;
+        }
+      }
+    }
+  }
+
+  /** Pop up */
+  .popupbox-titleBar {
+    background-color: $secondary-color;
+    color: #006e62;
+  }
+
+  .popupbox-btn--close {
+    color: #006e62;
+
+    &:hover {
+      color: lightgray;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .popupbox-content {
+    p {
+      overflow: hidden;
+      background-color: white;
+      color: #282828;
+    }
+  }
+
+  /** GDPR Cookies Component */
+  .gdpr-container-class {
+    
+    .gdpr-btn-class {
+      background: #95d6cc;
+      color: #003731;
+
+      &:hover {
+        background: $secondary-color;
+        color: $light-background;
       }
     }
   }

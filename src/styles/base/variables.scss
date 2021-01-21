@@ -34,19 +34,19 @@ $footer-padding-large: 12%;
 
 /* Colors */
 $primary-color: #00897b;
-$secondary-color: #b2fef7;
+$secondary-color: #4EBAAA;//#b2fef7;
 
 $light-background: #ffffff;
-$dark-background: #000C0B;//2c2b2b;
+$dark-background: #001B19;//#000c0b; //2c2b2b;
 
 // Navigation
 $light-navigation-shadow: $primary-color;
-$light-navigation-font-color__text: rgba(0, 0, 0, 0.6);
+$light-navigation-font-color__text: $primary-color;
 $light-navigation-menu__hover: lighten($primary-color, 5%);
-$light-navigation-menu__hover-text: #B2FEF7;
+$light-navigation-menu__hover-text: #b2fef7;
 
 // Footer
-$light-footer-link__hover-text: $secondary-color;
+$light-footer-link__hover-text: #95D6CC;
 
 // Body
 $light-font-color__title: rgba(0, 0, 0, 0.6);
@@ -57,13 +57,13 @@ $light-font-color__link: $primary-color;
 
 // Dark Mode
 $dark-font-color__title: $secondary-color;
+$dark-font-color__motto: #F4FDFC;
 $dark-font-color__text: $dark-font-color__title;
 $dark-font-color__link: #28a79c;
 $dark-font-color__highlighted: #076335;
 $dark-font-color: $dark-font-color__title;
 
 /* Typography */
-
 
 // Headings
 

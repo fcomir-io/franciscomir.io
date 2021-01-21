@@ -32,6 +32,7 @@
       overflow-wrap: break-word;
       margin: 0;
       margin-bottom: 0.8rem;
+      color: white;
     }
   }
 }
@@ -39,8 +40,44 @@
 .subscribe-button-container {
   display: flex;
   justify-content: center;
-  margin-right: 1rem;  
-  margin-top: 0.5rem;  
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+
+  .subscribe-button {
+    margin: 0.5rem 0rem;
+    font-size: 1rem;
+    padding: 0.3rem 2rem;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    color: $light-background;
+
+    a {
+      text-decoration: none;
+      color: $light-background;
+      border: 0px;
+    }
+
+    .react-icons {
+      margin-right: 0.3rem;
+      margin-top: 0.3rem;
+      vertical-align: text-bottom;
+      color: $light-background;
+    }
+
+    &:hover,
+    &:focus {
+      background: #60c1b3;
+      border: 1px solid #00524a;
+      color: #00524a;
+      a,
+      .react-icons {
+        color: #00524a;
+        background: #60c1b3;
+        border: 0px;
+      }
+    }
+  }
 }
 
 /** Screens bigger than 420px */
@@ -50,7 +87,7 @@
 
 /** Screens bigger than 620px */
 @include small-breakpoint {
-  .card-container {    
+  .card-container {
     margin-top: 3rem;
     margin-bottom: 2rem;
   }
@@ -59,7 +96,7 @@
 /** Screens bigger than $tablet = 800px */
 @include medium-breakpoint {
   /** Nothing to change */
-  .card-container {    
+  .card-container {
     flex-direction: row;
 
     .info-avatar {
@@ -68,9 +105,9 @@
 
     .subscribe-button-container {
       display: flex;
-      justify-content: flex-end;      
+      justify-content: flex-end;
     }
-  }  
+  }
 }
 
 /** Screens bigger than $desktop = 1200px */

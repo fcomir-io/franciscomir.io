@@ -15,42 +15,53 @@
   margin-bottom: 3rem;
 }
 
-.container-custom-class {
-  background-color: lighten($primary-color, 10%);
+/** GDPR Cookies Component */
+.gdpr-container-class {
+  background-color: #006e62;
   align-items: baseline;
   bottom: 0px;
+  left: 25%;
   position: fixed;
-  width: 100%;
+  width: 700px;
   z-index: 999;
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
+  padding: 0.25rem 1rem;
 
-  .content-custom-class {
+  .gdpr-content-class {
     border: 0px;
     border-radius: 0px;
     box-shadow: none;
-    color: white;
+    color: #dcf1ee;
     font-weight: 700;
     cursor: pointer;
     flex: 0 0 auto;
-    padding: 5px 15px;
-    margin: 5px 15px;
+    padding: 0.2rem;
+
+    a {
+      color: $secondary-color;
+    }
   }
 
-  .btn-custom-class {
-    background-color: $primary-color;
+  .gdpr-btn-class {
+    background-color: $secondary-color;
     border: 0px;
     border-radius: 5px;
     box-shadow: none;
-    color: white;
+    color: #00524a;
     font-weight: 700;
     cursor: pointer;
     flex: 0 0 auto;
     padding: 5px 15px;
-    margin: 5px 25px;
+    margin: 5px 5px;
+
+    &:hover {
+      background-color: #95d6cc;
+    }
   }
 }
 

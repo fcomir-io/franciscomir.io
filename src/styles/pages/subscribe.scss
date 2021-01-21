@@ -1,7 +1,12 @@
 @import "../main.scss";
 
 .subscribe-form {
+  border: 1px solid #4ebaaa;
+  box-shadow: 1px 2px 15px rgba(#4ebaaa, 0.2);
+  padding: 2rem;
+  padding-bottom: 0;
   margin: 0 auto;
+  margin-bottom: 1rem;
 
   p {
     padding: 0;
@@ -9,11 +14,10 @@
     padding-left: 1rem;
   }
 
-  .indicates-required {    
+  .indicates-required {
     text-align: right;
     font-size: 16px;
     margin-top: 0.5rem;
-    //background-color: green;
   }
 
   .required-mark {
@@ -64,24 +68,6 @@
 
   padding: 0.5rem;
 
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-  }
-
-  input {
-    margin-top: 0.3rem;
-    line-height: 1rem;
-    height: 2.5rem;
-    text-align: left;
-    background-color: rgb(186, 204, 223);
-
-    &.only-lower-case {
-      text-transform: lowercase;
-    }
-  }
-
   .birthday-input-form {
     display: flex;
     align-items: center;
@@ -90,21 +76,12 @@
     input {
       text-align: center;
       padding: 0 0.3rem;
-    }
-    input,
+    } 
+       
     span {
       margin: 0.3rem;
     }
   }
-}
-
-.popupbox-wrapper {
-  background-color: $primary-color;
-}
-
-.popupbox-content {
-  background-color: rgb(231, 238, 247);
-  color: black;
 }
 
 /** Screens bigger than 420px */
@@ -117,8 +94,9 @@
   .subscribe-form {
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 1rem;
 
-    .indicates-required {      
+    .indicates-required {
       text-align: right;
       font-size: 16px;
       margin-top: 0.5rem;
@@ -158,8 +136,9 @@
   .subscribe-form {
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 1rem;
 
-    .indicates-required {     
+    .indicates-required {
       text-align: right;
       font-size: 16px;
       margin-top: 0.5rem;
@@ -183,8 +162,10 @@
 /** Screens bigger than $desktop = 1200px */
 @include large-breakpoint {
   .subscribe-form {
+    margin: 0 auto;
+    margin-bottom: 1rem;
 
-    .indicates-required {      
+    .indicates-required {
       padding-right: 4.5rem;
     }
   }
