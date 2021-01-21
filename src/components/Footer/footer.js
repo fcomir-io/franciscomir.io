@@ -90,7 +90,7 @@ export default class Footer extends React.Component {
                 </div>
               </div>
               <div className="aux-block">
-                © 2020 Francisco Mir           
+                © 2021 Francisco Mir           
                 <Link className="privacy-policy" to="/privacyPolicy">Privacy and Cookies Policy</Link>
               </div>
             </div>
