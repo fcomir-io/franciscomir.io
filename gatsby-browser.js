@@ -54,17 +54,7 @@ const components = {
   "p.inlineCode": (props) => (
     <code {...props} style={{ backgroundColor: "lightgray" }}></code>
   ),
-  pre: ({ children: { props } }) => {
-    if (props.mdxType === "code") {
-      return (
-        <Code
-          codeString={props.children.trim()}
-          language={props.className && props.className.replace("language-", "")}
-          {...props}
-        />
-      );
-    }
-  },
+
   "p.img": (props) => {
     return (
       <EmbeddedImage
@@ -76,8 +66,21 @@ const components = {
   },
   iframe: (props) => <StyledVideo {...props} />,
 
-  li: ({ children: { props } }) => {
+  "ul.li": ({ children: { props } }) => {
     return <li {...props}></li>;
+  },
+
+  /** Always at the end */
+  pre: ({ children: { props } }) => {
+    if (props.mdxType === "code") {
+      return (
+        <Code
+          codeString={props.children.trim()}
+          language={props.className && props.className.replace("language-", "")}
+          {...props}
+        />
+      );
+    }
   },
 };
 
