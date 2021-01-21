@@ -18,11 +18,11 @@
 /** GDPR Cookies Component */
 .gdpr-container-class {
   background-color: #006e62;
-  align-items: baseline;
-  bottom: 0px;  
+  align-items: baseline;  
   position: fixed;
   width: 400px;
-  left: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
   z-index: 999;
   border-radius: 5px;
   display: flex;
@@ -73,7 +73,6 @@
   }
   .gdpr-container-class {
     width: 400px;
-    left: 5%;
     flex-direction: column;
 
     .gdpr-content-class {
@@ -100,10 +99,9 @@
   }
 
   .gdpr-container-class {
-    width: 600px;
-    left: 5%;
-    flex-direction: row;
-    
+    width: 600px;    
+    flex-direction: row;        
+
     .gdpr-content-class {
       font-weight: 500;
     }
@@ -124,11 +122,11 @@
   .page-container {
     width: 90%;
     margin: 0 auto;
+    background-color: lightgreen;
   }
 
   .gdpr-container-class {
     width: 700px;
-    left: 25%;    
   }
 }
 
