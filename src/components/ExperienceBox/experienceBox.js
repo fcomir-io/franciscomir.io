@@ -12,9 +12,9 @@ class ExperienceBox extends React.Component {
     return (
       <div className="experience-box">
         <Link to={"/experience"} state={this.props}>
-          <div className="topic">
-            <h1>{title}</h1>
+          <div className="topic">            
             <img src={image} className="experience-icon" alt={title} />
+            <h1>{title}</h1>
           </div>
         </Link>
       </div>
