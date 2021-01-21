@@ -1,6 +1,8 @@
 // React libraries
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
+// Gabtsby Components libraries
+import { Link } from "gatsby";
 // Context for Dark/Light Theme
 import ThemeContext from "../context/ThemeContext";
 // Internal applicaiton data
@@ -51,11 +53,13 @@ export default function PageLayout(props) {
         buttonText="Accept"
         cookieName="franciscomir-gdpr"
         expires={90}
-        buttonClasses="btn-custom-class"
-        contentClasses="content-custom-class"
-        containerClasses="container-custom-class"
+        buttonClasses="gdpr-btn-class"
+        contentClasses="gdpr-content-class"
+        containerClasses="gdpr-container-class"
       >
         This website uses cookies to enhance the user experience.{" "}
+        <br/>
+        <span style={{ fontSize: "14px" }}>{" "} For more information go to {" "} <Link className="privacy-policy" to="/privacyPolicy">{" "} Privacy and Cookies Policy</Link></span>
       </CookieConsent>
     </>
   );
