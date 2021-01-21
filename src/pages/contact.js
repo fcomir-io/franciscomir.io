@@ -187,7 +187,7 @@ function ContactPage() {
       <div className="page-container">
         <h1 className="page-title"></h1>
         <div className="contact-form">
-          <p> Hello there 👋 </p>
+          <h1> Hello there 👋 </h1>
           <p>
             Please don’t hesitate to reach out with the contact information
             below, or send a message using the form.
