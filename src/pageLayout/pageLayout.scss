@@ -19,13 +19,14 @@
 .gdpr-container-class {
   background-color: #006e62;
   align-items: baseline;
-  bottom: 0px;
-  left: 25%;
+  bottom: 0px;  
   position: fixed;
-  width: 700px;
+  width: 400px;
+  left: 5%;
   z-index: 999;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -67,9 +68,21 @@
 
 /** Screens bigger than 420px */
 @include x-small-breakpoint {
-  /** Nothing to configure */
   .page-container {
-    //background-color: indigo;
+    background-color: yellow;
+  }
+  .gdpr-container-class {
+    width: 400px;
+    left: 5%;
+    flex-direction: column;
+
+    .gdpr-content-class {
+      font-weight: 300;
+    }
+  
+    .gdpr-btn-class {
+      font-weight: 300;
+    }
   }
 }
 
@@ -83,7 +96,21 @@
   .page-container {
     width: 95%;
     margin: 0 auto;
-    //background-color: blue;
+    background-color: blue;
+  }
+
+  .gdpr-container-class {
+    width: 600px;
+    left: 5%;
+    flex-direction: row;
+    
+    .gdpr-content-class {
+      font-weight: 500;
+    }
+  
+    .gdpr-btn-class {
+      font-weight: 500;
+    }
   }
 }
 
@@ -97,7 +124,11 @@
   .page-container {
     width: 90%;
     margin: 0 auto;
-    //background-color: green;
+  }
+
+  .gdpr-container-class {
+    width: 700px;
+    left: 25%;    
   }
 }
 
@@ -111,6 +142,9 @@
   .page-container {
     width: 75%;
     margin: 0 auto;
-    //background-color: pink;
+  }
+
+  .gdpr-container-class {
+    /** Nothing to change */
   }
 }
