@@ -184,16 +184,16 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map((edge) => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.frontmatter.date,
-                last_modified: edge.node.frontmatter.last_modified,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.slug,
-                guid: rssMetadata.site_url + edge.node.slug,
+              return allMdx.edges.map((node) => ({
+                categories: node.frontmatter.tags,
+                date: node.frontmatter.date,
+                last_modified: node.frontmatter.last_modified,
+                title: node.frontmatter.title,
+                description: node.excerpt,
+                url: rssMetadata.site_url + node.slug,
+                guid: rssMetadata.site_url + node.slug,
                 custom_elements: [
-                  { "content:encoded": edge.node.html },
+                  { "content:encoded": node.html },
                   { author: config.userEmail },
                 ],
               }));
@@ -209,7 +209,7 @@ module.exports = {
                 ) {
                   edges {
                     node {
-                      excerpt
+                      excerpt(pruneLength: 150)
                       html
                       slug 
                       timeToRead
