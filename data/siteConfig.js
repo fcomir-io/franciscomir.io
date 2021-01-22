@@ -4,7 +4,6 @@ const config = {
   siteTitleShort: "FM",
   siteUrl: "https://www.franciscomir.io",
   siteLogo: '/logo.png',
-  
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'Do MMMM, YYYY',
@@ -12,6 +11,9 @@ const config = {
   siteDescription: "Over 15+ years of experience willing to share...",
   siteRss: '/rss.xml',
 
+  siteLanguage: `en-GB`,
+  siteLocale: `en_gb`,
+  
   userEmail: 'contact@franciscomir.io',
   
   menuLinks: [

@@ -4,29 +4,35 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const urljoin = require("url-join");
+ // Site Data
 const config = require("./data/siteConfig");
+// Ressources
+const urljoin = require("url-join");
+
+const siteMetadata = {
+  title: config.siteTitle,
+  description: config.siteDescription,
+  author: "Francisco Mir",  
+  siteUrl: urljoin(config.siteUrl, config.pathPrefix),    
+  feedUrl: "https://www.franciscomir.io/rss.xml",
+  logo: "https://www.franciscomir.io/logo.png",
+  rssMetadata: {
+    site_url: urljoin(config.siteUrl, config.pathPrefix),
+    feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
+    title: config.siteTitle,
+    description: config.siteDescription,
+    image_url: `${urljoin(
+      config.siteUrl,
+      config.pathPrefix
+    )}/logos/logo-48.png`,
+  },
+}
 
 module.exports = {
+
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
-  siteMetadata: {
-    title: "Francisco Mir",
-    author: "Francisco Mir",
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    description: "Over 15+ years of experience willing to share...",
-    feedUrl: "https://www.franciscomir.io/rss.xml",
-    logo: "https://www.franciscomir.io/logo.png",
-    rssMetadata: {
-      site_url: urljoin(config.siteUrl, config.pathPrefix),
-      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${urljoin(
-        config.siteUrl,
-        config.pathPrefix
-      )}/logos/logo-48.png`,
-    },
-  },
+  siteMetadata: siteMetadata,
+
   /* Your site config here */
   flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
