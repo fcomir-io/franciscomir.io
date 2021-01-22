@@ -164,6 +164,7 @@ module.exports = {
         endpoint: process.env.GATSBY_MAILCHIMP_URL,
       },
     },
+    
     /** Plugin to manage RSS feed.
      * https://www.gatsbyjs.org/docs/adding-an-rss-feed/
      */
@@ -184,16 +185,16 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map((node) => ({
-                categories: node.frontmatter.tags,
-                date: node.frontmatter.date,
-                last_modified: node.frontmatter.last_modified,
-                title: node.frontmatter.title,
-                description: node.excerpt,
-                url: rssMetadata.site_url + node.slug,
-                guid: rssMetadata.site_url + node.slug,
+              return allMdx.edges.map((edge) => ({
+                categories: edge.node.frontmatter.tags,
+                date: edge.node.frontmatter.date,
+                last_modified: edge.node.frontmatter.last_modified,
+                title: edge.node.frontmatter.title,
+                description: edge.node.excerpt,
+                url: config.siteUrl + '/' + edge.node.slug,
+                guid: config.siteUrl + '/' + edge.node.slug,
                 custom_elements: [
-                  { "content:encoded": node.html },
+                  { "content:encoded": edge.node.html },
                   { author: config.userEmail },
                 ],
               }));
