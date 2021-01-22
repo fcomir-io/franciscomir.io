@@ -36,6 +36,10 @@ module.exports = {
   /* Your site config here */
   flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
+
+    /** Provides drop-in support for server rendering data added with React Helmet */
+    `gatsby-plugin-react-helmet`,
+
     /** Provides drop-in support for SASS/SCSS stylesheets */
     `gatsby-plugin-sass`,
 
