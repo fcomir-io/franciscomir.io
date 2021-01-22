@@ -227,7 +227,7 @@ module.exports = {
               }
             `,
             output: config.siteRss,
-            title: `${config.siteTitle} - RSS Feed`,
+            title: `${config.siteTitle} | RSS Feed`,
           },
         ],
       },

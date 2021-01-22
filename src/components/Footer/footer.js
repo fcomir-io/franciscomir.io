@@ -27,7 +27,7 @@ export default class Footer extends React.Component {
                   <Link to="/contact">Contact</Link>
                   <Link to="/subscribe">Subscribe</Link>
                   <a
-                    href="https://priceless-bhabha-7132c2.netlify.app/rss.xml"
+                    href="https://franciscomir.io/rss.xml"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
