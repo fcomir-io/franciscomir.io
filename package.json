@@ -9,7 +9,7 @@
     "develop": "env-cmd -f .env gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -p 9500 -o",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-mdx": "^1.2.40",
     "gatsby-plugin-page-creator": "^2.3.28",
+    "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sass": "^2.3.3",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-styled-components": "^3.9.0",
