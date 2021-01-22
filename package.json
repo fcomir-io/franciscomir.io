@@ -48,6 +48,7 @@
     "react-icons": "^3.10.0",
     "react-moment": "^0.9.7",
     "react-popupbox": "^2.0.8",
+    "react-seo-component": "^2.0.2",
     "react-star-rating-component": "^1.4.1",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.1",
