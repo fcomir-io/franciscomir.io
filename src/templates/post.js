@@ -1,6 +1,7 @@
 // React libraries
 import React from "react";
 import { Helmet } from "react-helmet";
+import SEO from "react-seo-component";
 // Components from Gatsby library
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
@@ -11,6 +12,8 @@ import config from "../../data/siteConfig";
 import PageLayout from "../pageLayout/pageLayout";
 import PostTags from "../components/PostTags/postTags";
 import UserInfo from "../components/UserInfo/userInfo";
+import { useSiteMetadata } from "../components/SEO/useSiteMetaData";
+import Dump from "../components/_debug__Dump/Dump";
 // Styles
 import styled from "styled-components";
 import "../styles/templates/post.scss";
@@ -19,37 +22,39 @@ import fran from "../../content/images/fran_2019_crop.jpg";
 
 const Image = styled(Img)`
   border-radius: 5px;
-  max-width: 300px;  
+  max-width: 300px;
 `;
 
 export const article_Query = graphql`
   query($slug: String!) {
     mdx(slug: { eq: $slug }) {
-      frontmatter {        
+      frontmatter {
         title
         date(formatString: "DD-MMMM-YYYY")
         last_modified(formatString: "DD-MMMM-YYYY")
         tags
         category
         thumbnail {
+          publicURL
           childImageSharp {
             fixed(width: 175, height: 175) {
               ...GatsbyImageSharpFixed
             }
             sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
               ...GatsbyImageSharpSizes_tracedSVG
-            }
+            }            
           }
         }
       }
       slug
+      excerpt
       body
     }
   }
 `;
 
 export default ({ data, pageContext }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, slug, excerpt, body } = data.mdx;
 
   let article = data.mdx;
   console.log(article);
@@ -61,8 +66,29 @@ export default ({ data, pageContext }) => {
 
   const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${config.siteUrl}/blog/${article.slug}?media=${thumbnail}`;
 
+  /** Data for SEO Metadata */
+  const {
+    title,
+    author,
+    siteUrl,
+    logo,
+  } = useSiteMetadata().siteMetadata;
+  let cover = article.frontmatter.thumbnail;
+
   return (
     <PageLayout>
+      <SEO 
+        title={title}
+        description={excerpt}
+        image={cover === null ? `${siteUrl}/${logo}` : `${siteUrl}${cover.publicURL}`}
+        pathname={`${siteUrl}/${slug}`}
+        siteLanguage={config.siteLanguage}
+        siteLocale={config.siteLocale}
+        author={author}
+        article={true}
+        publishedDate={frontmatter.date}
+        modifiedDate={frontmatter.last_modified}
+      />
       <Helmet title={`Blog - ${config.siteTitle}`} />
       <div className="page-container">
         <div className="post-header">
@@ -75,7 +101,7 @@ export default ({ data, pageContext }) => {
                 <img src={fran} className="avatar-small" alt="Francisco Mir" />
               </Link>
               <time className="date">{article.frontmatter.date}</time>
-              
+
               <a
                 className="linkedIn-link"
                 //href={linkedInShare}

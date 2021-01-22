@@ -1,24 +1,26 @@
 // React libraries
-import React from "react"
-import { Helmet } from "react-helmet"
-import GitHubButton from "react-github-btn"
+import React from "react";
+import { Helmet } from "react-helmet";
+import GitHubButton from "react-github-btn";
+import SEO from "react-seo-component";
 // Components from Gatsby library
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby";
 // 3rd party libraries
-import { FaRegNewspaper } from "react-icons/fa"
+import { FaRegNewspaper } from "react-icons/fa";
 // Internal applicaiton data
-import config from "../../data/siteConfig"
-import { index_pitch } from "../../content/data/page_content"
+import config from "../../data/siteConfig";
+import { index_pitch } from "../../content/data/page_content";
 // Components
-import PageLayout from "../pageLayout/pageLayout"
-import ExperienceBlock from "../components/ExperienceBlock/experienceBlock"
-import PostListing from "../components/PostListing/postListing"
-import SEO from "../components/SEO/SEO"
+import PageLayout from "../pageLayout/pageLayout";
+import ExperienceBlock from "../components/ExperienceBlock/experienceBlock";
+import PostListing from "../components/PostListing/postListing";
+import { useSiteMetadata } from "../components/SEO/useSiteMetaData";
+import Dump from "../components/_debug__Dump/Dump";
 // Styles
-import "../styles/pages/index.scss"
+import "../styles/pages/index.scss";
 // Images
-import fran from "../../content/images/fran_2019_crop.jpg"
-import linkedin from "../images/linkedin.png"
+import fran from "../../content/images/fran_2019_crop.jpg";
+import linkedin from "../images/linkedin.png";
 
 export default function Home() {
   /** Query to get list of available posts */
@@ -53,20 +55,36 @@ export default function Home() {
         }
       }
     }
-  `)
-  const posts = allPostEdges_Query.posts.edges
-  console.log("index-Posts", posts)
+  `);
+  const posts = allPostEdges_Query.posts.edges;
+
+  /** Data for SEO Metadata */
+  const {
+    title,
+    description,
+    author,
+    siteUrl,
+    logo,
+  } = useSiteMetadata().siteMetadata;
+
   return (
     <PageLayout>
+      <SEO
+        title={title}
+        description={description || "nothin’"}
+        image={logo}
+        pathname={siteUrl}
+        siteLanguage={config.siteLanguage}
+        siteLocale={config.siteLocale}
+      />
       <Helmet title={`${config.siteTitle} – ${config.siteSlogan}`} />
       <div className="page-container">
         <div className="summary">
-          <div className="elevator-pitch">            
+          <div className="elevator-pitch">
             <div
               className="index-pitch"
               dangerouslySetInnerHTML={{ __html: index_pitch }}
             />
-
             <div className="direct-contact-section">
               <div className="contact-icons">
                 <div className="linkedin-button">
@@ -123,5 +141,5 @@ export default function Home() {
         </div>
       </div>
     </PageLayout>
-  )
+  );
 }
