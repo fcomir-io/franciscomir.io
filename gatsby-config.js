@@ -167,36 +167,24 @@ module.exports = {
     /** Plugin to manage RSS feed.
      * https://www.gatsbyjs.org/docs/adding-an-rss-feed/
      */
-
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: `gatsby-plugin-feed`,
       options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "Francisco Mir";
-          return ret;
-        },
         query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
+          {
+            site {
+              siteMetadata {
                 title
                 description
-                image_url
+                siteUrl
               }
             }
           }
-        }
-      `,
+        `,
         feeds: [
           {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMdx.edges.map((edge) => ({
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 last_modified: edge.node.frontmatter.last_modified,
@@ -211,34 +199,34 @@ module.exports = {
               }));
             },
             query: `
-            {
-              allMdx(
-                limit: 1000,
+              {
+                allMdx(
+                  limit: 1000,
                 sort: {
                   order: [DESC, DESC]
                   fields: [frontmatter___last_modified, frontmatter___date]
-                }                
-              ) {
-                edges {
-                  node {
-                    excerpt(pruneLength: 180)
-                    html
-                    timeToRead
-                    slug
-                    frontmatter {
-                      title
-                      date(formatString: "DD-MMMM-YYYY")
-                      last_modified(formatString: "DD-MMMM-YYYY")
-                      tags
-                      category                      
+                }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      slug 
+                      timeToRead
+                      frontmatter {
+                        title
+                        date(formatString: "DD-MMMM-YYYY")
+                        last_modified(formatString: "DD-MMMM-YYYY")
+                        tags
+                        category                      
+                      }
                     }
                   }
                 }
               }
-            }
-          `,
+            `,
             output: config.siteRss,
-            title: "Francisco Mir - RSS Feed",
+            title: `${config.siteTitle} - RSS Feed`,
           },
         ],
       },

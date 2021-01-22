@@ -47,7 +47,7 @@ export const article_Query = graphql`
         }
       }
       slug
-      excerpt
+      excerpt(pruneLength: 150)
       body
     }
   }
