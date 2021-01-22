@@ -69,15 +69,15 @@ export default function Home() {
 
   return (
     <PageLayout>
+      <Helmet title={`${config.siteTitle} – ${config.siteSlogan}`} />
       <SEO
         title={title}
-        description={description || "nothin’"}
+        description={description || "nothing’"}
         image={logo}
         pathname={siteUrl}
         siteLanguage={config.siteLanguage}
         siteLocale={config.siteLocale}
       />
-      <Helmet title={`${config.siteTitle} – ${config.siteSlogan}`} />
       <div className="page-container">
         <div className="summary">
           <div className="elevator-pitch">

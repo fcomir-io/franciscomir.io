@@ -68,7 +68,6 @@ export default ({ data, pageContext }) => {
 
   /** Data for SEO Metadata */
   const {
-    title,
     author,
     siteUrl,
     logo,
@@ -78,7 +77,9 @@ export default ({ data, pageContext }) => {
   return (
     <PageLayout>
       <SEO 
-        title={title}
+        title={frontmatter.title}
+        titleTemplate={config.siteTitle}
+        titleSeparator={`-`}
         description={excerpt}
         image={cover === null ? `${siteUrl}/${logo}` : `${siteUrl}${cover.publicURL}`}
         pathname={`${siteUrl}/${slug}`}
