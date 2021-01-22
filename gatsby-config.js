@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
- // Site Data
+// Site Data
 const config = require("./data/siteConfig");
 // Ressources
 const urljoin = require("url-join");
@@ -12,8 +12,8 @@ const urljoin = require("url-join");
 const siteMetadata = {
   title: config.siteTitle,
   description: config.siteDescription,
-  author: "Francisco Mir",  
-  siteUrl: urljoin(config.siteUrl, config.pathPrefix),    
+  author: "Francisco Mir",
+  siteUrl: urljoin(config.siteUrl, config.pathPrefix),
   feedUrl: "https://www.franciscomir.io/rss.xml",
   logo: "https://www.franciscomir.io/logo.png",
   rssMetadata: {
@@ -26,17 +26,15 @@ const siteMetadata = {
       config.pathPrefix
     )}/logos/logo-48.png`,
   },
-}
+};
 
 module.exports = {
-
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: siteMetadata,
 
   /* Your site config here */
   flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
-
     /** Provides drop-in support for server rendering data added with React Helmet */
     `gatsby-plugin-react-helmet`,
 
@@ -295,6 +293,26 @@ module.exports = {
         },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ["production", "development"],
+      },
+    },
+
+    /** Configuring Zeit Now routes, enhancing zero-config deployments.
+     *  https://www.gatsbyjs.com/plugins/gatsby-plugin-zeit-now/
+     */
+    {
+      resolve: "gatsby-plugin-zeit-now",
+      options: {
+        globalHeaders: {
+          "referrer-policy": "same-origin",
+          "feature-policy":
+            "geolocation 'self'; microphone 'self'; camera 'self'",
+          "expect-ct": "max-age=604800, enforce",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block",
+          "x-content-type-options": "nosniff",
+          "x-download-options": "noopen",
+        },
       },
     },
   ],
