@@ -191,8 +191,8 @@ module.exports = {
                 last_modified: edge.node.frontmatter.last_modified,
                 title: edge.node.frontmatter.title,
                 description: edge.node.excerpt,
-                url: config.siteUrl + '/' + edge.node.slug,
-                guid: config.siteUrl + '/' + edge.node.slug,
+                url: config.siteUrl + '/blog/' + edge.node.slug,
+                guid: config.siteUrl + '/blog/' + edge.node.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
                   { author: config.userEmail },
