@@ -58,8 +58,8 @@
       .new {
         display: inline-block;
         font-size: 0.9rem;
-        background: #9ab98b;
-        color: darken(rgb(93, 112, 76), 18%);
+        background: $secondary-color;
+        color: white;
         border-radius: $border-radius;
         padding: 0.3rem 0.75rem;
         text-align: center;
@@ -69,7 +69,7 @@
         display: inline-block;
         font-size: 0.9rem;
         background: #eedb88;
-        color: darken(rgb(93, 112, 76), 18%);
+        color: black;
         border-radius: $border-radius;
         padding: 0.3rem 0.75rem;
         text-align: center;
