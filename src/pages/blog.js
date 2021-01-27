@@ -18,8 +18,8 @@ function BlogPage(props) {
     query {
       allMdx(
         sort: {
-          order: [DESC, DESC]
-          fields: [frontmatter___last_modified, frontmatter___date]
+          order: [DESC]
+          fields: [frontmatter___date]
         }
         limit: 10
       ) {
