@@ -57,9 +57,9 @@
 
       .new {
         display: inline-block;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         background: $secondary-color;
-        color: white;
+        color:  #f5f5f5;
         border-radius: $border-radius;
         padding: 0.3rem 0.75rem;
         text-align: center;
@@ -67,7 +67,7 @@
 
       .modified {
         display: inline-block;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         background: #eedb88;
         color: black;
         border-radius: $border-radius;
