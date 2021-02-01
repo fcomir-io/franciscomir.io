@@ -92,36 +92,3 @@ function AboutPage(props) {
 }
 
 export default AboutPage
-
-/*
-class RatingBox extends React.Component {
-  render() {
-    const { caption, value } = this.props
-
-    return (
-      <>
-        <div className="rating-box">
-          <h2>{caption}</h2>
-        </div>
-      </>
-    )
-  }
-}
-
-<RatingBox caption={skill.caption} value={skill.value} />
-<StarRatingComponent
-            name={caption}
-            editing={false}
-            starCount={5}
-            value={value}
-            renderStarIcon={() => <FaStar size={18} />}
-            renderStarIconHalf={() => (
-              <FaStarHalfAlt
-                size={18}
-                color={value <= 0.5 ? "#e4eed2" : "#4a5e26"}
-              />
-            )}
-            starColor={`#4a5e26`}
-            emptyStarColor={`#e4eed2`}
-          />
-          */
