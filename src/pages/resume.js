@@ -13,7 +13,7 @@ import "../styles/pages/resume.scss"
 // Images
 import linkedin from "../images/linkedin.png"
 // myCV
-import myCV_URL from "../../static/CV - Francisco Mir - 2020.pdf"
+import myCV_URL from "../../static/CV - Francisco Mir - 2021.pdf"
 
 function ResumePage() {
   return (
