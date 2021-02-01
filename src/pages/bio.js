@@ -30,7 +30,9 @@ function MyBioPage() {
                 )
               })}
             </div>
-            <img className="general-image" src={water_polo} />
+            <div className="image-box">
+              <img className="general-image" src={water_polo} /> -->
+            </div>
           </div>
           <h1 className="page-title">Sport</h1>
           <div className="bio-sport">
@@ -43,7 +45,9 @@ function MyBioPage() {
                 )
               })}
             </div>
-            <img className="sport-image" src={water_polo} />
+            <div className="image-box">
+              <img className="sport-image" src={water_polo} />
+            </div>
           </div>
           <h1 className="page-title">Art & Music</h1>
           <div className="bio-art-music">
@@ -56,7 +60,9 @@ function MyBioPage() {
                 )
               })}
             </div>
-            <img className="art-music-image" src={water_polo} />
+            <div className="image-box">
+              <img className="art-music-image" src={water_polo} />
+            </div>
           </div>
         </div>
       </div>
