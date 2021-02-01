@@ -6,6 +6,11 @@ a {
   font-weight: 550;
 }
 
+/* To hide and unhide the images */
+.image-box {
+  display: none;
+}
+
 .bio-general {
   display: flex;
   flex-direction: column;
