@@ -1,6 +1,6 @@
 const config = {
   siteTitle: "Francisco Mir",
-  siteSlogan: "Over 15+ years of tech experience willing to share...",
+  siteSlogan: "Let's build something together...",
   siteTitleShort: "FM",
   siteUrl: "https://www.franciscomir.io",
   siteLogo: '/logo.png',
@@ -8,7 +8,9 @@ const config = {
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'Do MMMM, YYYY',
 
-  siteDescription: "Over 15+ years of experience willing to share...",
+  siteDescription: siteSlogan,
+  siteAuthor: "Francisco Mir",
+  publishedDate: 05/02/2021,
   siteRss: '/rss.xml',
 
   siteLanguage: `en-GB`,
