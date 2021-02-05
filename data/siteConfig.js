@@ -8,7 +8,7 @@ const config = {
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'Do MMMM, YYYY',
 
-  siteDescription: siteSlogan,
+  siteDescription: "Let's build something together...",
   siteAuthor: "Francisco Mir",
   publishedDate: 05/02/2021,
   siteRss: '/rss.xml',
