@@ -14,7 +14,6 @@ import Footer from "../components/Footer/footer";
 import "./pageLayout.scss";
 // Images
 import favicon from "../images/favicon.png";
-import banner from "../images/banner.jpg"
 // GDPR Management
 import CookieConsent from "react-cookie-consent";
 
@@ -37,8 +36,6 @@ export default function PageLayout(props) {
       >
         <meta name="author" content='Francisco Mir' />
         <meta name="description" content={config.siteDescription} />
-        <meta property="og:type" content='website' />
-        <meta property="og:image" content={'https://www.franciscomir.io/${banner}'} />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"

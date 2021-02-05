@@ -10,7 +10,8 @@ const config = {
 
   siteDescription: "Let's build something together...",
   siteAuthor: "Francisco Mir",
-  publishedDate: 05/02/2021,
+  publishedDate: '05/02/2021',
+  siteType: 'website',
   siteRss: '/rss.xml',
 
   siteLanguage: `en-GB`,
