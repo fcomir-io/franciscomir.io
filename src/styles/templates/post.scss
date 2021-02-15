@@ -27,7 +27,20 @@
     line-height: 50px;
 
     .date {      
-      margin: 0 0.5rem;
+      margin: 0 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: $primary-color;
+      font-weight: 400;
+    }
+
+    .infoSeparator {
+      width: 25px;
+      font-size: 0.9rem;
+      color: $primary-color;
+      font-weight: 100;
+    }
+
+    .timeToRead {
       font-size: 0.9rem;
       color: $primary-color;
       font-weight: 400;
@@ -37,7 +50,8 @@
       color: $light-font-color__link;
       text-decoration: none;
 
-      &.twitter-link {
+      &.linkedIn-link {
+        display: none;
         margin: 0 0.5rem;
       }
 

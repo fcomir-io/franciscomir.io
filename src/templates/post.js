@@ -49,6 +49,7 @@ export const article_Query = graphql`
       slug
       excerpt(pruneLength: 150)
       body
+      timeToRead
     }
   }
 `;
@@ -103,6 +104,10 @@ export default ({ data, pageContext }) => {
               </Link>
               <time className="date">{article.frontmatter.date}</time>
 
+              <p className="infoSeparator"> - </p>
+
+              <p className="timeToRead">{article.timeToRead} min read</p>
+
               <a
                 className="linkedIn-link"
                 //href={linkedInShare}
@@ -111,6 +116,7 @@ export default ({ data, pageContext }) => {
               >
                 Share on LinkedIn
               </a>
+
             </div>
 
             <PostTags tags={article.frontmatter.tags} />
