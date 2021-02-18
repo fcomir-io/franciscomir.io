@@ -16,6 +16,8 @@
   &.scroll {
     box-shadow: 1px 2px 18px $light-navigation-shadow;
     background-color: lighten($light-background, 50%);
+    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
   }
 
   .nav-container {
