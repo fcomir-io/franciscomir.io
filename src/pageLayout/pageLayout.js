@@ -13,7 +13,7 @@ import Footer from "../components/Footer/footer";
 // CSS
 import "./pageLayout.scss";
 // Images
-import favicon from "../images/favicon.png";
+import logo from "../images/logo.png";
 // GDPR Management
 import CookieConsent from "react-cookie-consent";
 
@@ -40,7 +40,7 @@ export default function PageLayout(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
         />
-        <link rel="shortcut icon" type="image/png" href={favicon} />
+        <link rel="shortcut icon" type="image/png" href={logo} />
       </Helmet>
       <Navigation menuLinks={config.menuLinks} />
       <div className={dark ? "dark" : ""}>
