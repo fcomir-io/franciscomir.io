@@ -8,7 +8,7 @@ import ThemeContext from "../../context/ThemeContext";
 import styles_variables from "./navigation.scss";
 // Images
 import banner from "../../images/banner.jpg";
-import favicon from "../../images/favicon.png";
+import logo from "../../images/logo.png";
 import sun from "../../images/sun.svg";
 import moon from "../../images/moon.svg";
 
@@ -84,8 +84,8 @@ class Navigation extends React.Component {
               <div className="presentation-card">
                 <Link to="/">
                   <img
-                    src={favicon}
-                    className="favicon"
+                    src={logo}
+                    className="logo"
                     alt="I don't know what"
                   />
                 </Link>
