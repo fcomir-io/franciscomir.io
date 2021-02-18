@@ -26,35 +26,46 @@
     transition: height 0.3s ease;
   }
 
-  .brand {
-    height: 18px;
+  .presentation-card {
     display: flex;
-    align-items: center;
-    margin-right: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    
-    .text {
-      // By-default the name is not displayed - It will depend on the size of the screen
-      display: none;
-      margin: 0;
-      padding: 0;
-      color: $primary-color;
-    }
+    flex-direction: row;
+    align-items: flex-start;
 
     .favicon {
-      height: 23px;
-      width: 23px;
-      min-width: 23px;
+      height: 40px;
+      width: 40px;
+      min-width: 40px;
+      margin-top: 1rem;
       margin-bottom: 0;
+      margin-right: 0.7rem;
     }
-  }
 
-  .motto {
-    // By-default the name is not displayed - It will depend on the size of the screen
-    display: none;
-    margin: 0;
-    padding:0;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      margin-top: 0.4rem;
+      margin-right: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+
+      .text {
+        // By-default the name is not displayed - It will depend on the size of the screen
+        display: none;
+        margin: 0;
+        padding: 0;
+        color: $primary-color;
+      }
+
+      .motto {
+        // By-default the name is not displayed - It will depend on the size of the screen
+        display: none;
+        margin: 0;
+        padding: 0;
+      }
+    
+    }
   }
 
   .menu-links {
@@ -82,10 +93,10 @@
       max-height: 60px;
       border: 1px solid $light-background;
 
-      &:hover  {
+      &:hover {
         border: 1px solid $primary-color;
       }
-      
+
       &.active {
         background: $primary-color;
         border: 1px solid $light-background;
@@ -151,20 +162,32 @@
       padding: 0 1rem;
     }
 
-    .brand {
-      flex-grow: 1;
-
+    .presentation-card {
       .favicon {
-        margin-right: 1rem;
+        height: 60px;
+        width: 60px;
+        min-width: 60px;
+        margin-top: 0.7rem;
       }
 
-      .text {
-        display: inline;
-        font-size: 1.2rem;
-        font-weight: 600;        
+      .brand {
+        flex-grow: 1;  
+
+        .text {
+          display: inline;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .motto {
+          flex-grow: 1;
+          display: inline;
+          font-size: 14px;
+          font-weight: 500;
+          color: grey;
+        }
       }
     }
-
     .menu-links {
       display: flex;
       flex-direction: row;
@@ -218,18 +241,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
-    .motto {
-      flex-grow: 1;
-      display: inline;
-      padding: 0;
-      margin: 0;
-      font-size: 14px;
-      font-weight: 500;
-      color: grey;
-      padding-left: 42px;
-      //color: $light-font-color__text;
-    }
   }
 
   .nav-container {
