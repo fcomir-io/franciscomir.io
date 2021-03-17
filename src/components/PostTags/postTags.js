@@ -8,7 +8,7 @@ import "./postTags.scss"
 export default class PostTags extends Component {
   render() {
     const { tags, size } = this.props
-
+    
     return (
       <div className="tag-container">
         {tags &&
@@ -16,7 +16,7 @@ export default class PostTags extends Component {
             <Link
               key={tag}
               style={{ textDecoration: "none" }}
-              to={`/tags/${tag.toLowerCase()}`}
+              to={`/tags/${tag}`}
             >
               <span>{tag}</span>
             </Link>

@@ -78,7 +78,7 @@ function BlogPage(props) {
     const result = posts.filter((post) =>
       post.node.frontmatter.title
         .toLowerCase()
-        .includes(searchTerm.toLowerCase())
+        .includes(searchTerm)
     );
 
     console.log("result", result)
@@ -112,7 +112,7 @@ function BlogPage(props) {
             {allPostTags.map((tag) => {
               return (
                 <Link
-                  to={`/tags/${tag.toLowerCase()}`}
+                  to={`/tags/${tag}`}
                   className="category-filter"
                   key={tag}
                 >
