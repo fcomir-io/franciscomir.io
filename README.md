@@ -10,7 +10,7 @@ franciscomir.io
 
 My personal website running on Gatsby, React, and Node.js.
 
-https://compassionate-villani-cd7ef9.netlify.app/
+https://franciscomir.io/
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/621392d3-e486-49c7-8d75-cd0602e168c9/deploy-status)](https://app.netlify.com/sites/compassionate-villani-cd7ef9/deploys)
 
@@ -22,7 +22,7 @@ https://compassionate-villani-cd7ef9.netlify.app/
 	cd {folder}
 	run npm install
 	run npm audit fix
-	git submodule update --init --recursive  // If you have access to linked submodules
+	git submodule update --remote --recursive  // If you have access to linked submodules
 
 #### Set up .env file
 
