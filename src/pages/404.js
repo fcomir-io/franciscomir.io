@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 // Components
 import PageLayout from "../pageLayout/pageLayout"
+// Internal applicaiton data
+import config from "../../data/siteConfig";
 
 const NotFound = () => {
   return (
