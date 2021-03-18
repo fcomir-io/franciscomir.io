@@ -68,8 +68,7 @@ export default function Home() {
   } = useSiteMetadata().siteMetadata;
 
   return (
-    <PageLayout>
-      <Helmet title={`${config.siteTitle} – ${config.siteSlogan}`} />
+    <PageLayout>            
       <SEO
         title={title}
         description={description || "nothing’"}
@@ -78,6 +77,7 @@ export default function Home() {
         siteLanguage={config.siteLanguage}
         siteLocale={config.siteLocale}
       />
+      <Helmet title={`${config.siteTitle} – Home`} />
       <div className="page-container">
         <div className="summary">
           <div className="elevator-pitch">

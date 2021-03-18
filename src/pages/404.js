@@ -9,7 +9,7 @@ import PageLayout from "../pageLayout/pageLayout"
 const NotFound = () => {
   return (
     <PageLayout>
-    <Helmet title={`Page not found`} />
+    <Helmet title={`${config.siteTitle} – Page not found`} />
     <div className="page-container">
       <h1>Page not found</h1>
     </div>
