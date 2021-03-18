@@ -68,10 +68,11 @@ export default function Home() {
   } = useSiteMetadata().siteMetadata;
 
   return (
-    <PageLayout>            
+    <PageLayout>    
       <SEO
-        title={`${title} – ${description}`}
-        description={description || "nothing’"}
+        title={title || "Francisco Mir"}
+        titleTemplate={description || "nothing"}
+        description={description || "nothing"}
         image={logo}
         pathname={siteUrl}
         siteLanguage={config.siteLanguage}
