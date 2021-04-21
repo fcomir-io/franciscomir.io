@@ -58,7 +58,7 @@ export default ({ imageSource, imageCaption, ...props }) => {
             modifiedTime
             name
             childImageSharp {
-              fixed (width: 2000) {
+              fixed (width: 1000) {
                 ...GatsbyImageSharpFixed
               }
             }
