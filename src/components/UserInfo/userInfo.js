@@ -30,16 +30,7 @@ export default class UserInfo extends Component {
             <p>
               If you find my content useful, please consider subscribing to it.
               I never send spam and it is easy to unsubscribe anytime.
-            </p>
-
-            <div className="subscribe-button-container">
-              <div className="subscribe-button">
-                <Link to="/subscribe" activeClassName="active">
-                  <FaRegNewspaper size={22} className="react-icons" /> Join the
-                  Newsletter
-                </Link>
-              </div>
-            </div>
+            </p>            
           </div>
         </div>
       </div>
